@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/mtm-nft/static/css/main.ac986ce8.chunk.css",
+    "main.js": "/mtm-nft/static/js/main.ce4128ba.chunk.js",
+    "main.js.map": "/mtm-nft/static/js/main.ce4128ba.chunk.js.map",
+    "runtime-main.js": "/mtm-nft/static/js/runtime-main.0b7dda7c.js",
+    "runtime-main.js.map": "/mtm-nft/static/js/runtime-main.0b7dda7c.js.map",
+    "static/js/2.d3207a0a.chunk.js": "/mtm-nft/static/js/2.d3207a0a.chunk.js",
+    "static/js/2.d3207a0a.chunk.js.map": "/mtm-nft/static/js/2.d3207a0a.chunk.js.map",
+    "index.html": "/mtm-nft/index.html",
+    "static/css/main.ac986ce8.chunk.css.map": "/mtm-nft/static/css/main.ac986ce8.chunk.css.map",
+    "static/js/2.d3207a0a.chunk.js.LICENSE.txt": "/mtm-nft/static/js/2.d3207a0a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b7dda7c.js",
+    "static/js/2.d3207a0a.chunk.js",
+    "static/css/main.ac986ce8.chunk.css",
+    "static/js/main.ce4128ba.chunk.js"
+  ]
+}
