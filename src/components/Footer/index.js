@@ -9,7 +9,7 @@ import Theme from "../Theme";
 
 const items = [
   {
-    title: "Crypter.",
+    title: "Meta Talent Market.",
     menu: [
       {
         title: "Discover",
