@@ -22,14 +22,18 @@
 .logo
     position: relative
     z-index: 12
-    display: inline-block
+    display: flex
+    align-items: center
+    gap: 12px
     flex-shrink: 0
-    width: 128px
     margin-right: 32px
+    color: $neutrals3
     +d
         margin-right: auto
     img
-        width: 100%
+        height: 50px
+    span
+        line-height: 1.1
     
 .wrapper
     display: flex

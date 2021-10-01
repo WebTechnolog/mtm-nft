@@ -51,10 +51,11 @@ const Footers = () => {
             <Link className={styles.logo} to="/">
               <Image
                 className={styles.pic}
-                src="/images/logo-dark.png"
-                srcDark="/images/logo-light.png"
-                alt="Fitness Pro"
+                src="/images/logo.svg"
+                srcDark="/images/logo.svg"
+                alt="Meta Talent Market"
               />
+              <span>Meta<br/> Talent<br/> Market</span>
             </Link>
             <div className={styles.info}>The New Creative Economy.</div>
             <div className={styles.version}>
