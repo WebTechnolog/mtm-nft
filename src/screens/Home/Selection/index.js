@@ -16,7 +16,7 @@ const items = [
     image2x: "/images/content/selection-pic-1@2x.jpg",
   },
   {
-    title: "ETH never die",
+    title: "Cyberpunk city",
     content: "1 of 12",
     price: "0.27 ETH",
     url: "/item",
@@ -25,7 +25,7 @@ const items = [
     image2x: "/images/content/selection-pic-2@2x.jpg",
   },
   {
-    title: "Future coming soon",
+    title: "Future deep forest",
     content: "1 of 3",
     price: "0.27 ETH",
     url: "/item",
@@ -34,7 +34,7 @@ const items = [
     image2x: "/images/content/selection-pic-1@2x.jpg",
   },
   {
-    title: "Elon Musk silver coin 3d print",
+    title: "Ocean creatures",
     content: "1 of 4",
     price: "0.27 ETH",
     url: "/item",
@@ -46,25 +46,25 @@ const items = [
 
 const users = [
   {
-    name: "Payton Harris",
+    name: "Andy Wood",
     price: "<span>2.456</span> ETH",
     counter: "6",
     avatar: "/images/content/avatar-1.jpg",
   },
   {
-    name: "Anita Bins",
+    name: "Audrey Green",
     price: "<span>2.456</span> ETH",
     counter: "2",
     avatar: "/images/content/avatar-2.jpg",
   },
   {
-    name: "Joana Wuckert",
+    name: "Jessika Parker",
     price: "<span>2.456</span> ETH",
     counter: "3",
     avatar: "/images/content/avatar-3.jpg",
   },
   {
-    name: "Lorena Ledner",
+    name: "Patrik Snow",
     price: "<span>2.456</span> ETH",
     counter: "4",
     avatar: "/images/content/avatar-4.jpg",

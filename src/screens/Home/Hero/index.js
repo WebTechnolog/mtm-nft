@@ -11,8 +11,8 @@ import Connect from "../../../components/Connect";
 
 const items = [
   {
-    title: "the creator network®",
-    creator: "Enrico Cole",
+    title: "the meta talent network®",
+    creator: "Andy Wood",
     currency: "1.00 ETH",
     price: "$3,618.36",
     avatar: "/images/content/avatar-creator.jpg",
@@ -21,7 +21,7 @@ const items = [
   },
   {
     title: "Marco carrillo®",
-    creator: "Enrico Cole",
+    creator: "Andy Wood",
     currency: "2.00 ETH",
     price: "$2,477.92",
     avatar: "/images/content/avatar-creator.jpg",
@@ -29,8 +29,8 @@ const items = [
     image2x: "/images/content/video-preview@2x.jpg",
   },
   {
-    title: "the creator network®",
-    creator: "Enrico Cole",
+    title: "the meta talent network®",
+    creator: "Andy Wood",
     currency: "1.00 ETH",
     price: "$3,618.36",
     avatar: "/images/content/avatar-creator.jpg",
@@ -39,7 +39,7 @@ const items = [
   },
   {
     title: "Marco carrillo®",
-    creator: "Enrico Cole",
+    creator: "Andy Wood",
     currency: "2.00 ETH",
     price: "$2,477.92",
     avatar: "/images/content/avatar-creator.jpg",
@@ -82,7 +82,7 @@ const Hero = () => {
               Create, explore, & collect digital art NFTs.
             </div>
             <h2 className={cn("h3", styles.title)}>
-              The new creative economy.
+              The new meta talent marketplace.
             </h2>
             <Link className={cn("button-stroke", styles.button)} to="/search01">
               Start your search

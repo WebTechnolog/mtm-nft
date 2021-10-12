@@ -10,7 +10,7 @@ import DropdownEmpty from "../../../components/DropdownEmpty";
 
 const items = [
   {
-    name: "Edd Harris",
+    name: "Andy Wood",
     sign: "/images/content/cup.svg",
     number: "1",
     url: "/profile",
@@ -20,7 +20,7 @@ const items = [
     price: "<span>2.456</span> ETH",
   },
   {
-    name: "Odell Hane",
+    name: "Audrey Green",
     sign: "/images/content/donut.svg",
     number: "2",
     url: "/profile",
@@ -30,7 +30,7 @@ const items = [
     price: "<span>2.456</span> ETH",
   },
   {
-    name: "Marlee Kuphal",
+    name: "Andrew Steel",
     sign: "/images/content/lightning.svg",
     number: "3",
     url: "/profile",
@@ -40,7 +40,7 @@ const items = [
     price: "<span>2.456</span> ETH",
   },
   {
-    name: "Payton Kunde",
+    name: "Jessika Parker",
     sign: "/images/content/donut.svg",
     number: "4",
     url: "/profile",
@@ -50,7 +50,7 @@ const items = [
     price: "<span>2.456</span> ETH",
   },
   {
-    name: "Payton Buckridge",
+    name: "Patrik Snow",
     sign: "/images/content/donut.svg",
     number: "5",
     url: "/profile",

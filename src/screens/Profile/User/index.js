@@ -21,7 +21,7 @@ const User = ({ className, item }) => {
         <div className={styles.avatar}>
           <img src="/images/content/avatar-big.jpg" alt="Avatar" />
         </div>
-        <div className={styles.name}>Enrico Cole</div>
+        <div className={styles.name}>Andy Wood</div>
         <div className={styles.code}>
           <div className={styles.number}>0xc4c16a645...b21a</div>
           <button className={styles.copy}>

@@ -44,7 +44,7 @@ const User = ({ className }) => {
         </div>
         {visible && (
           <div className={styles.body}>
-            <div className={styles.name}>Enrico Cole</div>
+            <div className={styles.name}>Andy Wood</div>
             <div className={styles.code}>
               <div className={styles.number}>0xc4c16ab5ac7d...b21a</div>
               <button className={styles.copy}>
