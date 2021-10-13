@@ -53,9 +53,9 @@ const Footers = () => {
                 className={styles.pic}
                 src="/images/logo.svg"
                 srcDark="/images/logo.svg"
-                alt="Meta Talent Market"
+                alt="Meta Talent Marketplace"
               />
-              <span>Meta<br/> Talent<br/> Market</span>
+              <span>Meta<br/> Talent<br/> Marketplace</span>
             </Link>
             <div className={styles.info}>The new Meta Talent Marketplace.</div>
             <div className={styles.version}>
