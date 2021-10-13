@@ -7,19 +7,19 @@ import LoaderCircle from "../../../../components/LoaderCircle";
 const items = [
   {
     title: "0.007",
-    value: "ETH",
+    value: "MTT",
   },
   {
     title: "Your balance",
-    value: "8.498 ETH",
+    value: "8.498 MTT",
   },
   {
     title: "Service fee",
-    value: "0 ETH",
+    value: "0 MTT",
   },
   {
     title: "You will pay",
-    value: "0.007 ETH",
+    value: "0.007 MTT",
   },
 ];
 

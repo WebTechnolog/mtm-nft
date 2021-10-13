@@ -7,8 +7,8 @@ import Icon from "../../Icon";
 
 const items = [
   {
-    title: "ETH received",
-    price: "0.08 ETH recived",
+    title: "MTT received",
+    price: "0.08 MTT recived",
     date: "2 days ago",
     color: "#3772FF",
     image: "/images/content/notification-pic-1.jpg",
@@ -16,23 +16,23 @@ const items = [
   },
   {
     title: "C O I N Z",
-    price: "New bid 0.2 ETH",
+    price: "New bid 0.2 MTT",
     date: "3 days ago",
     color: "#3772FF",
     image: "/images/content/notification-pic-2.jpg",
     url: "/activity",
   },
   {
-    title: "ETH received",
-    price: "0.08 ETH recived",
+    title: "MTT received",
+    price: "0.08 MTT recived",
     date: "4 days ago",
     color: "#3772FF",
     image: "/images/content/notification-pic-3.jpg",
     url: "/activity",
   },
   {
-    title: "ETH received",
-    price: "0.08 ETH recived",
+    title: "MTT received",
+    price: "0.08 MTT recived",
     date: "5 days ago",
     color: "#3772FF",
     image: "/images/content/notification-pic-4.jpg",

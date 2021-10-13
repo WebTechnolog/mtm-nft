@@ -67,7 +67,7 @@ const Item = () => {
             <h1 className={cn("h3", styles.title)}>The amazing art</h1>
             <div className={styles.cost}>
               <div className={cn("status-stroke-green", styles.price)}>
-                2.5 ETH
+                2.5 MTT
               </div>
               <div className={cn("status-stroke-black", styles.price)}>
                 $4,429.87

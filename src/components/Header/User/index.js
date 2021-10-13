@@ -39,7 +39,7 @@ const User = ({ className }) => {
             <img src="/images/content/avatar-user.jpg" alt="Avatar" />
           </div>
           <div className={styles.wallet}>
-            7.00698 <span className={styles.currency}>ETH</span>
+            7.00698 <span className={styles.currency}>MTT</span>
           </div>
         </div>
         {visible && (
@@ -61,7 +61,7 @@ const User = ({ className }) => {
                 </div>
                 <div className={styles.details}>
                   <div className={styles.info}>Balance</div>
-                  <div className={styles.price}>4.689 ETH</div>
+                  <div className={styles.price}>4.689 MTT</div>
                 </div>
               </div>
               <button

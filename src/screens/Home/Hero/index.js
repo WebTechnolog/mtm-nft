@@ -13,7 +13,7 @@ const items = [
   {
     title: "the meta talent network®",
     creator: "Andy Wood",
-    currency: "1.00 ETH",
+    currency: "1.00 MTT",
     price: "$3,618.36",
     avatar: "/images/content/avatar-creator.jpg",
     image: "/images/content/video-preview.jpg",
@@ -22,7 +22,7 @@ const items = [
   {
     title: "Marco carrillo®",
     creator: "Andy Wood",
-    currency: "2.00 ETH",
+    currency: "2.00 MTT",
     price: "$2,477.92",
     avatar: "/images/content/avatar-creator.jpg",
     image: "/images/content/video-preview.jpg",
@@ -31,7 +31,7 @@ const items = [
   {
     title: "the meta talent network®",
     creator: "Andy Wood",
-    currency: "1.00 ETH",
+    currency: "1.00 MTT",
     price: "$3,618.36",
     avatar: "/images/content/avatar-creator.jpg",
     image: "/images/content/video-preview.jpg",
@@ -40,7 +40,7 @@ const items = [
   {
     title: "Marco carrillo®",
     creator: "Andy Wood",
-    currency: "2.00 ETH",
+    currency: "2.00 MTT",
     price: "$2,477.92",
     avatar: "/images/content/avatar-creator.jpg",
     image: "/images/content/video-preview.jpg",
@@ -82,7 +82,7 @@ const Hero = () => {
               Create, explore, & collect digital art NFTs.
             </div>
             <h2 className={cn("h3", styles.title)}>
-              The new meta talent marketplace.
+              The new Meta Talent Marketplace.
             </h2>
             <Link className={cn("button-stroke", styles.button)} to="/search01">
               Start your search
@@ -112,7 +112,7 @@ const Hero = () => {
                           </div>
                           <div className={styles.description}>
                             <div className={styles.category}>Instant price</div>
-                            <div className={styles.text}>3.5 ETH</div>
+                            <div className={styles.text}>3.5 MTT</div>
                           </div>
                         </div>
                       </div>

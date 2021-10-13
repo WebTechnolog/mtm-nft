@@ -157,8 +157,8 @@ const Search = () => {
                 )}
               />
               <div className={styles.scale}>
-                <div className={styles.number}>0.01 ETH</div>
-                <div className={styles.number}>10 ETH</div>
+                <div className={styles.number}>0.01 MTT</div>
+                <div className={styles.number}>10 MTT</div>
               </div>
             </div>
             <div className={styles.group}>

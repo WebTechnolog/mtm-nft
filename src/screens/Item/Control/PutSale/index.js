@@ -7,7 +7,7 @@ import Switch from "../../../../components/Switch";
 const items = [
   {
     title: "Enter your price",
-    value: "ETH",
+    value: "MTT",
   },
   {
     title: "Service fee",
@@ -15,7 +15,7 @@ const items = [
   },
   {
     title: "Total bid amount",
-    value: "0 ETH",
+    value: "0 MTT",
   },
 ];
 

@@ -17,7 +17,7 @@ const items = [
     color: "#3772FF",
     avatar: "/images/content/avatar-5.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Audrey Green",
@@ -27,7 +27,7 @@ const items = [
     color: "#9757D7",
     avatar: "/images/content/avatar-6.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Andrew Steel",
@@ -37,7 +37,7 @@ const items = [
     color: "#45B26B",
     avatar: "/images/content/avatar-7.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Jessika Parker",
@@ -47,7 +47,7 @@ const items = [
     color: "#23262F",
     avatar: "/images/content/avatar-8.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Patrik Snow",
@@ -57,7 +57,7 @@ const items = [
     color: "#777E90",
     avatar: "/images/content/avatar-9.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Edd Harris",
@@ -67,7 +67,7 @@ const items = [
     color: "#3772FF",
     avatar: "/images/content/avatar-5.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Odell Hane",
@@ -77,7 +77,7 @@ const items = [
     color: "#9757D7",
     avatar: "/images/content/avatar-6.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
   {
     name: "Marlee Kuphal",
@@ -87,7 +87,7 @@ const items = [
     color: "#45B26B",
     avatar: "/images/content/avatar-7.jpg",
     reward: "/images/content/reward-1.svg",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
   },
 ];
 

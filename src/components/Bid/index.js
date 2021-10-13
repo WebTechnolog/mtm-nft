@@ -5,19 +5,19 @@ import styles from "./Bid.module.sass";
 const items = [
   {
     title: "Enter bid",
-    value: "ETH",
+    value: "MTT",
   },
   {
     title: "Your balance",
-    value: "8.498 ETH",
+    value: "8.498 MTT",
   },
   {
     title: "Service fee",
-    value: "0 ETH",
+    value: "0 MTT",
   },
   {
     title: "Total bid amount",
-    value: "0 ETH",
+    value: "0 MTT",
   },
 ];
 

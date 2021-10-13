@@ -27,7 +27,7 @@ const Control = ({ className }) => {
               Highest bid by <span>Kohaku Tora</span>
             </div>
             <div className={styles.cost}>
-              <div className={styles.price}>1.46 ETH</div>
+              <div className={styles.price}>1.46 MTT</div>
               <div className={styles.price}>$2,764.89</div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Control = ({ className }) => {
         </div>
         <div className={styles.text}>
           Service fee <span className={styles.percent}>1.5%</span>{" "}
-          <span>2.563 ETH</span> <span>$4,540.62</span>
+          <span>2.563 MTT</span> <span>$4,540.62</span>
         </div>
         <div className={styles.foot}>
           <button

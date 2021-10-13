@@ -57,7 +57,7 @@ const Footers = () => {
               />
               <span>Meta<br/> Talent<br/> Market</span>
             </Link>
-            <div className={styles.info}>The new meta talent marketplace.</div>
+            <div className={styles.info}>The new Meta Talent Marketplace.</div>
             <div className={styles.version}>
               <div className={styles.details}>Dark theme</div>
               <Theme className="theme-big" />

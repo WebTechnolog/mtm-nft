@@ -6,10 +6,10 @@ import Icon from "../../../components/Icon";
 
 const items = [
   {
-    title: "The future of ETH®",
+    title: "The future of MTT®",
     content: "Highest bid",
     counter: "18 in stock",
-    price: "1.125 ETH",
+    price: "1.125 MTT",
     url: "/item",
     avatar: "/images/content/avatar-1.jpg",
     image: "/images/content/selection-pic-1.jpg",
@@ -18,7 +18,7 @@ const items = [
   {
     title: "Cyberpunk city",
     content: "1 of 12",
-    price: "0.27 ETH",
+    price: "0.27 MTT",
     url: "/item",
     avatar: "/images/content/avatar-4.jpg",
     image: "/images/content/selection-pic-2.jpg",
@@ -27,7 +27,7 @@ const items = [
   {
     title: "Future deep forest",
     content: "1 of 3",
-    price: "0.27 ETH",
+    price: "0.27 MTT",
     url: "/item",
     avatar: "/images/content/avatar-3.jpg",
     image: "/images/content/selection-pic-1.jpg",
@@ -36,7 +36,7 @@ const items = [
   {
     title: "Ocean creatures",
     content: "1 of 4",
-    price: "0.27 ETH",
+    price: "0.27 MTT",
     url: "/item",
     avatar: "/images/content/avatar-4.jpg",
     image: "/images/content/selection-pic-3.jpg",
@@ -47,25 +47,25 @@ const items = [
 const users = [
   {
     name: "Andy Wood",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
     counter: "6",
     avatar: "/images/content/avatar-1.jpg",
   },
   {
     name: "Audrey Green",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
     counter: "2",
     avatar: "/images/content/avatar-2.jpg",
   },
   {
     name: "Jessika Parker",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
     counter: "3",
     avatar: "/images/content/avatar-3.jpg",
   },
   {
     name: "Patrik Snow",
-    price: "<span>2.456</span> ETH",
+    price: "<span>2.456</span> MTT",
     counter: "4",
     avatar: "/images/content/avatar-4.jpg",
   },

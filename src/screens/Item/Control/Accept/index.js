@@ -5,11 +5,11 @@ import styles from "./Accept.module.sass";
 const items = [
   {
     title: "Service fee",
-    value: "0 ETH",
+    value: "0 MTT",
   },
   {
     title: "Total bid amount",
-    value: "1.46 ETH",
+    value: "1.46 MTT",
   },
 ];
 
@@ -23,7 +23,7 @@ const Accept = ({ className }) => {
           <strong>UI8</strong>
         </div>
       </div>
-      <div className={styles.stage}>1.46 ETH for 1 edition</div>
+      <div className={styles.stage}>1.46 MTT for 1 edition</div>
       <div className={styles.table}>
         {items.map((x, index) => (
           <div className={styles.row} key={index}>

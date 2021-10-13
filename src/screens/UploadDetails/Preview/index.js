@@ -23,7 +23,7 @@ const Preview = ({ className, onClose }) => {
             <div className={styles.body}>
               <div className={styles.line}>
                 <div className={styles.title}>Black Golden Tiger</div>
-                <div className={styles.price}>2.45 ETH</div>
+                <div className={styles.price}>2.45 MTT</div>
               </div>
               <div className={styles.line}>
                 <div className={styles.users}>
@@ -43,7 +43,7 @@ const Preview = ({ className, onClose }) => {
             <div className={styles.foot}>
               <div className={styles.status}>
                 <Icon name="candlesticks-up" size="20" />
-                Highest bid <span>0.001 ETH</span>
+                Highest bid <span>0.001 MTT</span>
               </div>
               <div className={styles.bid}>
                 New bid
