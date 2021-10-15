@@ -24,7 +24,7 @@ const items = [
   {
     title: "Disconnect",
     icon: "exit",
-    url: "https://ui8.net/ui8/products/mtm-nft-marketplace",
+    url: "https://mtm-nft.netlify.app",
   },
 ];
 

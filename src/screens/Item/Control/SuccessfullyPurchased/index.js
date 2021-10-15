@@ -6,19 +6,19 @@ import Icon from "../../../../components/Icon";
 const socials = [
   {
     title: "facebook",
-    url: "https://www.facebook.com/ui8.net/",
+    url: "https://www.facebook.com/metatalentmarketplace/",
   },
   {
     title: "twitter",
-    url: "https://twitter.com/ui8",
+    url: "https://twitter.com/metatalentmarketplace",
   },
   {
     title: "instagram",
-    url: "https://www.instagram.com/ui8net/",
+    url: "https://www.instagram.com/metatalentmarketplace/",
   },
   {
     title: "pinterest",
-    url: "https://www.pinterest.com/ui8m/",
+    url: "https://www.pinterest.com/metatalentmarketplace/",
   },
 ];
 
@@ -32,7 +32,7 @@ const SuccessfullyPurchased = ({ className }) => {
         </span>
       </div>
       <div className={styles.info}>
-        You successfully purchased <span>C O I N Z</span> from UI8
+        You successfully purchased <span>C O I N Z</span> from MTM
       </div>
       <div className={styles.table}>
         <div className={styles.row}>

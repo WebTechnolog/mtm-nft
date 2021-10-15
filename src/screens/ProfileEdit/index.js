@@ -77,7 +77,7 @@ const ProfileEdit = () => {
                       label="Custom url"
                       name="Url"
                       type="text"
-                      placeholder="ui8.net/Your custom URL"
+                      placeholder="mtm-nft.netlify.app"
                       required
                     />
                     <TextArea

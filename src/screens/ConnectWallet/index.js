@@ -68,7 +68,7 @@ const Connect = () => {
             </div>
             <div className={styles.item}>
               <div className={cn("h3", styles.title)}>Scan to connect</div>
-              <div className={styles.text}>Powered by UI8.Wallet</div>
+              <div className={styles.text}>Powered by MTM.Wallet</div>
               <div className={styles.box}>
                 <div className={styles.code}>
                   <img src="/images/content/qr-code.png" alt="Qr-code" />

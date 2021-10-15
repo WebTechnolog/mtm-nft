@@ -76,13 +76,13 @@ const Item = () => {
             </div>
             <div className={styles.info}>
               This NFT Card will give you Access to Special Airdrops. To learn
-              more about UI8 please visit{" "}
+              more about MTM please visit{" "}
               <a
-                href="https://ui8.net"
+                href="https://mtm-nft.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://ui8.net
+                https://mtm-nft.netlify.app
               </a>
             </div>
             <div className={styles.nav}>
