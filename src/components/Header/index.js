@@ -17,6 +17,10 @@ const nav = [
     title: "How it work",
   },
   {
+    url: "/create-image",
+    title: "Vincent",
+  },
+  {
     url: "/item",
     title: "Create item",
   },
