@@ -32,6 +32,10 @@ const items = [
         title: "Create item",
         url: "/upload-variants",
       },
+      {
+        title: "Create image",
+        url: "/create-image",
+      },
     ],
   },
 ];
