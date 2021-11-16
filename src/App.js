@@ -12,6 +12,9 @@ import Search02 from "./screens/Search02";
 import Profile from "./screens/Profile";
 import ProfileEdit from "./screens/ProfileEdit";
 import Item from "./screens/Item";
+import ImagesCreationHome from "./screens/ImagesCreationHome";
+import ImagesCreationStyleTransfer from "./screens/ImagesCreationStyleTransfer";
+import ImagesCreationTextToImage from "./screens/ImagesCreationTextToImage";
 import PageList from "./screens/PageList";
 
 function App() {
@@ -114,6 +117,33 @@ function App() {
           render={() => (
             <Page>
               <Item />
+            </Page>
+          )}
+        />
+        <Route
+          exact
+          path="/create-image"
+          render={() => (
+            <Page>
+              <ImagesCreationHome />
+            </Page>
+          )}
+        />
+        <Route
+          exact
+          path="/create-style-transfer"
+          render={() => (
+            <Page>
+              <ImagesCreationStyleTransfer />
+            </Page>
+          )}
+        />
+        <Route
+          exact
+          path="/create-text-to-image"
+          render={() => (
+            <Page>
+              <ImagesCreationTextToImage />
             </Page>
           )}
         />
