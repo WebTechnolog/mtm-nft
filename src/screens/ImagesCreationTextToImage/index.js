@@ -7,7 +7,7 @@ import TextInput from "../../components/TextInput";
 import Loader from "../../components/Loader";
 import Dropdown from "../../components/Dropdown";
 
-const apiUrl = 'http://185.244.175.167:5000';
+const apiUrl = 'https://185.244.175.167:5000';
 const upscaleOptions = ['default', 'art', 'comics', 'anime'];
 
 const ImagesCreationTextToImage = () => {
