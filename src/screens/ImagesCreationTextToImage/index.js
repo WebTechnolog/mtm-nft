@@ -30,6 +30,8 @@ const ImagesCreationTextToImage = () => {
     const name = target.name;
     let value;
 
+    event.persist();
+
     switch (target.type) {
       case 'checkbox': {
         value = target.checked;
@@ -37,8 +39,19 @@ const ImagesCreationTextToImage = () => {
       }
 
       case 'file': {
-        value = target.files[0];
-        break;
+        const reader = new FileReader();
+
+        reader.readAsDataURL(target.files[0]);
+        reader.onload = function () {
+          value = reader.result.replace('data:image/png;base64,', '');
+
+          setFormValues((formValues) => ({
+            ...formValues,
+            [name]: value,
+          }));
+        };
+
+        return;
       }
 
       default: {
@@ -46,7 +59,6 @@ const ImagesCreationTextToImage = () => {
       }
     }
 
-    event.persist();
     setFormValues((formValues) => ({
       ...formValues,
       [name]: value,
@@ -130,7 +142,7 @@ const ImagesCreationTextToImage = () => {
     <>
       <div className={cn("section", styles.section)}>
         <div className={cn("container", styles.container)}>
-          {(apiStatusResponse.status !== 'process' && apiStatusResponse.status !== 'ready') && (
+          {Object.keys(apiStatusResponse).length === 0 && (
             <>
               <div className={styles.top}>
                 <h1 className={cn("h2", styles.heading)}>
@@ -169,7 +181,7 @@ const ImagesCreationTextToImage = () => {
                       </p>
 
                       <div><strong>Start Image</strong></div>
-                      <div className={styles.file} style={{backgroundImage: `url(${formValues.init_image && URL.createObjectURL(formValues.init_image)})`}}>
+                      <div className={styles.file} style={{backgroundImage: `url(data:image/png;base64,${formValues.init_image})`}}>
                         <input
                           className={styles.load}
                           name="init_image"
@@ -270,7 +282,7 @@ const ImagesCreationTextToImage = () => {
             </>
           )}
 
-          {(apiStatusResponse.status === 'process' || apiStatusResponse.status === 'ready') && (
+          {Object.keys(apiStatusResponse).length > 0 && (
             <>
               <div className={styles.top}>
                 <h1 className={cn("h2", styles.heading)}>
@@ -282,6 +294,19 @@ const ImagesCreationTextToImage = () => {
                     In progress - {apiStatusResponse.img}
                   </div>
                 )}
+
+                {(apiStatusResponse.status !== 'process' && apiStatusResponse.status !== 'ready' && apiStatusResponse.status !== 'upscale failed') && (
+                  <div className={cn("h3", styles.heading)}>
+                    Finishing...
+                  </div>
+                )}
+
+                {apiStatusResponse.status === 'upscale failed' && (
+                  <div className={cn("h3", styles.heading)}>
+                    Oops, something went wrong.<br/>
+                    Please try creating another image.
+                  </div>
+                )}
               </div>
 
               {apiStatusResponse.status === 'ready' && (
@@ -291,7 +316,11 @@ const ImagesCreationTextToImage = () => {
                   </p>
 
                   <p>&nbsp;</p>
+                </>
+              )}
 
+              {(apiStatusResponse.status === 'ready' || apiStatusResponse.status === 'upscale failed') && (
+                <>
                   <p>
                     <button type="button" className={cn('button', styles.buttonBig)} onClick={handleNewImageClick}>
                       Create another one
