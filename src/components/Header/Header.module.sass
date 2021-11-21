@@ -41,7 +41,7 @@
     flex-grow: 1
     +d
         flex-grow: 0
-    +m
+    +t
         position: absolute
         top: 0
         left: 0
@@ -73,7 +73,7 @@
     border-left: 2px solid $neutrals6
     +d
         display: none
-    +m
+    +t
         display: flex
         flex-direction: column
         margin: 0 0 40px
@@ -87,7 +87,7 @@
     line-height: 40px
     color: $neutrals4
     transition: color .2s
-    +m
+    +t
         margin-left: 0
         font-size: 24px
         line-height: 64px
@@ -96,13 +96,13 @@
         color: $blue
     &:nth-child(n+4)
         display: none
-        +m
+        +t
             display: block
 
 .search
     position: relative
     flex-shrink: 0
-    width: 256px
+    width: 216px
     margin-right: 24px
     +t
         display: none
@@ -149,7 +149,7 @@
 
 .burger
     display: none
-    +m
+    +t
         display: block
         position: relative
         margin-left: 20px
