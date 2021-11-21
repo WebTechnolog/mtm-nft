@@ -51,7 +51,8 @@
   margin-top: 16px
   border-radius: 16px
   overflow: hidden
-  background: $neutrals7
+  background: $neutrals7 50% no-repeat
+  background-size: contain
   +dark
     background: $neutrals2
 
@@ -87,7 +88,32 @@
   +hairline-2
   color: $neutrals5
 
+.formControlSelect
+  width: 100%
+  height: 48px
+  padding: 0 14px
+  border-radius: 12px
+  border: 2px solid $neutrals6
+  background: none
+  +poppins
+  +caption-bold-1
+  color: $neutrals2
+  transition: border-color .2s
+  +dark
+    border-color: $neutrals3
+    color: $neutrals8
+  +placeholder
+    color: $neutrals4
+  &:focus
+    border-color: $neutrals4
+
 .optionsList
   display: grid
   grid-template-columns: repeat(2, 1fr)
   grid-gap: 16px
+
+.imageResult
+  text-align: center
+  img
+    max-width: 100%
+    border-radius: 16px

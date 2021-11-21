@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Switch.module.sass";
 
-const Switch = ({ className, value, setValue }) => {
+const Switch = ({ className, value, setValue, ...props }) => {
   return (
     <label className={cn(styles.switch, className)}>
       <input
@@ -10,6 +10,7 @@ const Switch = ({ className, value, setValue }) => {
         type="checkbox"
         checked={value}
         onChange={() => setValue(!value)}
+        {...props}
       />
       <span className={styles.inner}>
         <span className={styles.box}></span>

@@ -9,16 +9,16 @@ import User from "./User";
 
 const nav = [
   {
+    url: "/create-image",
+    title: "Vincent AI",
+  },
+  {
     url: "/search01",
     title: "Discover",
   },
   {
     url: "/faq",
     title: "How it work",
-  },
-  {
-    url: "/create-image",
-    title: "Vincent",
   },
   {
     url: "/item",
