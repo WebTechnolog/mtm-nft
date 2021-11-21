@@ -23,7 +23,6 @@ const ImagesCreationTextToImage = () => {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [needStatusCheck, setNeedStatusCheck] = useState(0);
-  const [statusCheckInterval, setStatusCheckInterval] = useState(null);
   const [userId, setUserId] = useState(Date.now());
   const [apiRunResponse, setApiRunResponse] = useState({});
   const [apiStatusResponse, setApiStatusResponse] = useState({});
@@ -122,7 +121,7 @@ const ImagesCreationTextToImage = () => {
             // console.log('STATUS-ERROR', error);
           }
         )
-    }, 100)
+    }, 500)
   }, [needStatusCheck])
 
   return (
@@ -278,7 +277,7 @@ const ImagesCreationTextToImage = () => {
 
                 {apiStatusResponse.status === 'process' && (
                   <div className={cn("h3", styles.heading)}>
-                    In progress - {apiStatusResponse.img}%
+                    In progress - {apiStatusResponse.img}
                   </div>
                 )}
               </div>
