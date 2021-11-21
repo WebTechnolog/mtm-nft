@@ -5,10 +5,8 @@ import Switch from "../../components/Switch";
 import Icon from "../../components/Icon";
 import TextInput from "../../components/TextInput";
 import Loader from "../../components/Loader";
-import Dropdown from "../../components/Dropdown";
 
 const apiUrl = 'https://185.244.175.167:5000';
-const upscaleOptions = ['default', 'art', 'comics', 'anime'];
 
 const ImagesCreationTextToImage = () => {
   const [isAdvancedEnabled, setIsAdvancedEnabled] = useState(false);
@@ -114,7 +112,11 @@ const ImagesCreationTextToImage = () => {
         .then(
           (result) => {
             // console.log('STATUS', result);
-            setNeedStatusCheck(result.status === 'process' ? needStatusCheck + 1 : 0);
+            setNeedStatusCheck(
+              result.status === 'process' || result.status === 'start upscale' || result.status === 'start process'
+                ? needStatusCheck + 1
+                : 0
+            );
             setApiStatusResponse(result);
           },
           (error) => {
@@ -282,11 +284,13 @@ const ImagesCreationTextToImage = () => {
                 )}
               </div>
 
-              {!apiStatusResponse.status === 'process' && (
+              {apiStatusResponse.status === 'ready' && (
                 <>
-                  <div className={styles.imageResult}>
+                  <p className={styles.imageResult}>
                     <img src={`data:image/png;base64,${apiStatusResponse.img}`} alt="Resulting Image" />
-                  </div>
+                  </p>
+
+                  <p>&nbsp;</p>
 
                   <p>
                     <button type="button" className={cn('button', styles.buttonBig)} onClick={handleNewImageClick}>

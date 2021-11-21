@@ -25,8 +25,11 @@ const ImagesCreationHome = () => {
         <div className={cn("container", styles.container)}>
           <div className={styles.top}>
             <h1 className={cn("h2", styles.heading)}>
-              Choose a creation method
+              Vincent AI<br />the power of imagination
             </h1>
+            <h4 className={cn("h4", styles.heading)}>
+              Choose a creation method
+            </h4>
           </div>
           <div className={styles.list}>
             {sections.map((item, index) => (
