@@ -6,7 +6,7 @@ import Icon from "../../components/Icon";
 import TextInput from "../../components/TextInput";
 import Loader from "../../components/Loader";
 
-const apiUrl = 'https://185.244.175.167:5000';
+const apiUrl = 'https://api.mtm.art';
 
 const ImagesCreationTextToImage = () => {
   const [isAdvancedEnabled, setIsAdvancedEnabled] = useState(false);
