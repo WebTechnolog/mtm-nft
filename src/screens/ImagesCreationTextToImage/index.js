@@ -86,7 +86,7 @@ const ImagesCreationTextToImage = () => {
       headers: { 'Content-Type': 'multipart/form-data' },
       body: JSON.stringify({
         ...{
-          max_iterations: 50,
+          max_iterations: 250,
           seed: -1,
         },
         ...formValues,
