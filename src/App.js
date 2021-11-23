@@ -15,6 +15,7 @@ import Item from "./screens/Item";
 import ImagesCreationHome from "./screens/ImagesCreationHome";
 import ImagesCreationStyleTransfer from "./screens/ImagesCreationStyleTransfer";
 import ImagesCreationTextToImage from "./screens/ImagesCreationTextToImage";
+import Antiques from "./screens/Antiques";
 import PageList from "./screens/PageList";
 
 function App() {
@@ -144,6 +145,15 @@ function App() {
           render={() => (
             <Page>
               <ImagesCreationTextToImage />
+            </Page>
+          )}
+        />
+        <Route
+          exact
+          path="/antiques"
+          render={() => (
+            <Page>
+              <Antiques />
             </Page>
           )}
         />

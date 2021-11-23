@@ -1,0 +1,111 @@
+@import ../../styles/helpers
+
+.top
+  max-width: 736px
+  margin: 0 auto 80px
+  text-align: center
+  +d
+    margin-bottom: 64px
+  +m
+    margin-bottom: 32px
+
+.heading
+  margin-bottom: 16px
+
+.link
+  margin: 0 6px
+  padding: 6px 12px
+  border-radius: 14px
+  background: none
+  +button-2
+  color: $neutrals4
+  transition: all .2s
+  &:hover
+    color: $neutrals3
+    +dark
+      color: $neutrals6
+  &.active
+    background: $neutrals3
+    color: $neutrals8
+    +dark
+      background: $neutrals8
+      color: $neutrals2
+  &:nth-child(n+5)
+    +d
+      display: none
+
+.cell
+  flex: 0 0 calc(25% - 32px)
+  max-width: calc(25% - 32px)
+  margin: 32px 16px 0
+  +d
+    flex: 0 0 calc(25% - 16px)
+    max-width: calc(25% - 16px)
+    margin: 24px 8px 0
+  +t
+    flex: 0 0 calc(50% - 32px)
+    max-width: calc(50% - 32px)
+    margin: 32px 16px 0
+  +m
+    max-width: 100%
+    margin: 0
+    &:not(:last-child)
+      margin-bottom: 20px
+
+.label
+  margin-bottom: 12px
+  +hairline-2
+  color: $neutrals5
+
+.scale
+  display: flex
+  justify-content: space-between
+  margin-bottom: -3px
+  font-weight: 500
+
+.list
+  +m
+    margin: 0 -8px
+
+.slider
+  display: flex
+  flex-wrap: wrap
+  margin: -32px -16px 0
+  +m
+    display: block
+    margin: 0
+
+.card
+  flex: 0 0 calc(25% - 32px)
+  max-width: calc(25% - 32px)
+  margin: 32px 16px 0
+  +d
+    flex: 0 0 calc(33.333% - 32px)
+    max-width: calc(33.333% - 32px)
+  +t
+    flex: 0 0 calc(50% - 32px)
+    max-width: calc(50% - 32px)
+  +m
+    max-width: 100%
+    margin: 0 0 16px
+
+.cardImage
+  position: relative
+  &:after
+    content: ''
+    display: block
+    padding-top: 100%
+  img
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    object-fit: cover
+    border-radius: 16px
+
+.btns
+  margin-top: 32px
+  text-align: center
+  +m
+    display: none

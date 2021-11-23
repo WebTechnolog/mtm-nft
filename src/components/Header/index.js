@@ -13,6 +13,10 @@ const nav = [
     title: "Vincent AI",
   },
   {
+    url: "/antiques",
+    title: "Antiques",
+  },
+  {
     url: "/search01",
     title: "Discover",
   },
