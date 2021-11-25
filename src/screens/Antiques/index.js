@@ -1,85 +1,270 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
-import Fancybox from "../../libs/fancybox.js";
-import styles from "./Antiques.module.sass";
+import { Link } from "react-router-dom";
+import styles from "./Profile.module.sass";
+import Icon from "../../components/Icon";
+import User from "./User";
+import Items from "./Items";
+import Followers from "./Followers";
 
-const images = [
+// data
+import { bids } from "../../mocks/bids";
+import { isStepDivisible } from "react-range/lib/utils";
+
+const navLinks = [
+  "On Sale",
+  "Collectibles",
+  "Created",
+  "Likes",
+  "Following",
+  "Followers",
+];
+
+const socials = [
   {
-    image: "/images/content/antiques/1.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/1.jpg",
+    title: "twitter",
+    url: "https://twitter.com/metatalentmarketplace",
   },
   {
-    image: "/images/content/antiques/2.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/2.jpg",
+    title: "instagram",
+    url: "https://www.instagram.com/metatalentmarketplace/",
   },
   {
-    image: "/images/content/antiques/3.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/3.jpg",
-  },
-  {
-    image: "/images/content/antiques/4.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/4.jpg",
-  },
-  {
-    image: "/images/content/antiques/5.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/5.jpg",
-  },
-  {
-    image: "/images/content/antiques/6.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/6.jpg",
-  },
-  {
-    image: "/images/content/antiques/7.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/7.jpg",
-  },
-  {
-    image: "/images/content/antiques/8.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/8.jpg",
-  },
-  {
-    image: "/images/content/antiques/9.jpg",
-    thumbnail: "/images/content/antiques/thumbnails/9.jpg",
+    title: "facebook",
+    url: "https://www.facebook.com/metatalentmarketplace/",
   },
 ];
 
-const Antiques = () => {
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 100000,
-        settings: "unslick",
-      },
+const following = [
+  {
+    name: "Sally Fadel",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-5.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "stroke",
+    buttonContent: "Unfollow",
+    gallery: [
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-2.jpg",
+      "/images/content/follower-pic-3.jpg",
+      "/images/content/follower-pic-4.jpg",
     ],
-  };
+  },
+  {
+    name: "Aniya Harber",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-6.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "stroke",
+    buttonContent: "Unfollow",
+    gallery: [
+      "/images/content/follower-pic-5.jpg",
+      "/images/content/follower-pic-6.jpg",
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-3.jpg",
+    ],
+  },
+  {
+    name: "Edwardo Bea",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-7.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "stroke",
+    buttonContent: "Unfollow",
+    gallery: [
+      "/images/content/follower-pic-4.jpg",
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-3.jpg",
+      "/images/content/follower-pic-6.jpg",
+    ],
+  },
+  {
+    name: "Reymundo",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-8.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "stroke",
+    buttonContent: "Unfollow",
+    gallery: [
+      "/images/content/follower-pic-5.jpg",
+      "/images/content/follower-pic-2.jpg",
+      "/images/content/follower-pic-6.jpg",
+      "/images/content/follower-pic-1.jpg",
+    ],
+  },
+  {
+    name: "Jeanette",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-9.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "stroke",
+    buttonContent: "Unfollow",
+    gallery: [
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-3.jpg",
+      "/images/content/follower-pic-5.jpg",
+      "/images/content/follower-pic-4.jpg",
+    ],
+  },
+];
+
+const followers = [
+  {
+    name: "Sally Fadel",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-5.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "blue",
+    buttonContent: "Follow",
+    gallery: [
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-2.jpg",
+      "/images/content/follower-pic-3.jpg",
+      "/images/content/follower-pic-4.jpg",
+    ],
+  },
+  {
+    name: "Aniya Harber",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-6.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "blue",
+    buttonContent: "Follow",
+    gallery: [
+      "/images/content/follower-pic-5.jpg",
+      "/images/content/follower-pic-6.jpg",
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-3.jpg",
+    ],
+  },
+  {
+    name: "Edwardo Bea",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-7.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "blue",
+    buttonContent: "Follow",
+    gallery: [
+      "/images/content/follower-pic-4.jpg",
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-3.jpg",
+      "/images/content/follower-pic-6.jpg",
+    ],
+  },
+  {
+    name: "Reymundo",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-8.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "blue",
+    buttonContent: "Follow",
+    gallery: [
+      "/images/content/follower-pic-5.jpg",
+      "/images/content/follower-pic-2.jpg",
+      "/images/content/follower-pic-6.jpg",
+      "/images/content/follower-pic-1.jpg",
+    ],
+  },
+  {
+    name: "Jeanette",
+    counter: "161 followers",
+    avatar: "/images/content/avatar-9.jpg",
+    url: "https://mtm-nft.netlify.app",
+    buttonClass: "blue",
+    buttonContent: "Follow",
+    gallery: [
+      "/images/content/follower-pic-1.jpg",
+      "/images/content/follower-pic-3.jpg",
+      "/images/content/follower-pic-5.jpg",
+      "/images/content/follower-pic-4.jpg",
+    ],
+  },
+];
+
+const Profile = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visible, setVisible] = useState(false);
 
   return (
-    <div className={cn("section", styles.section)}>
-      <div className={cn("container", styles.container)}>
-        <div className={styles.top}>
-          <h1 className={cn("h2", styles.heading)}>
-            Antiques
-          </h1>
+    <div className={styles.profile}>
+      <div
+        className={cn(styles.head, { [styles.active]: visible })}
+        style={{
+          backgroundImage: "url(/images/content/bg-profile.jpg)",
+        }}
+      >
+        <div className={cn("container", styles.container)}>
+          <div className={styles.btns}>
+            <button
+              className={cn("button-stroke button-small", styles.button)}
+              onClick={() => setVisible(true)}
+            >
+              <span>Edit cover photo</span>
+              <Icon name="edit" size="16" />
+            </button>
+            <Link
+              className={cn("button-stroke button-small", styles.button)}
+              to="profile-edit"
+            >
+              <span>Edit profile</span>
+              <Icon name="image" size="16" />
+            </Link>
+          </div>
+          <div className={styles.file}>
+            <input type="file" />
+            <div className={styles.wrap}>
+              <Icon name="upload-file" size="48" />
+              <div className={styles.info}>Drag and drop your photo here</div>
+              <div className={styles.text}>or click to browse</div>
+            </div>
+            <button
+              className={cn("button-small", styles.button)}
+              onClick={() => setVisible(false)}
+            >
+              Save photo
+            </button>
+          </div>
         </div>
-
-        <div className={styles.list}>
-          <div className={styles.slider}>
-            {images.map((item, index) => (
-              <a className={styles.card} key={index} data-fancybox="gallery" href={item.image}>
-                <div className={styles.cardImage}>
-                  <img src={item.thumbnail} alt='Antique' />
-                </div>
-              </a>
-            ))}
+      </div>
+      <div className={styles.body}>
+        <div className={cn("container", styles.container)}>
+          <User className={styles.user} item={socials} />
+          <div className={styles.wrapper}>
+            <div className={styles.nav}>
+              {navLinks.map((x, index) => (
+                <button
+                  className={cn(styles.link, {
+                    [styles.active]: index === activeIndex,
+                  })}
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {x}
+                </button>
+              ))}
+            </div>
+            <div className={styles.group}>
+              <div className={styles.item}>
+                {activeIndex === 0 && (
+                  <Items class={styles.items} items={bids.slice(0, 3)} />
+                )}
+                {activeIndex === 1 && (
+                  <Items class={styles.items} items={bids.slice(0, 6)} />
+                )}
+                {activeIndex === 2 && (
+                  <Items class={styles.items} items={bids.slice(0, 2)} />
+                )}
+                {activeIndex === 3 && (
+                  <Items class={styles.items} items={bids.slice(0, 3)} />
+                )}
+                {activeIndex === 4 && (
+                  <Followers className={styles.followers} items={following} />
+                )}
+                {activeIndex === 5 && (
+                  <Followers className={styles.followers} items={followers} />
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,4 +272,4 @@ const Antiques = () => {
   );
 };
 
-export default Antiques;
+export default Profile;
