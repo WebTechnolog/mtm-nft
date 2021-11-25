@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles/app.sass";
 import Page from "./components/Page";
+import ComingSoon from "./screens/ComingSoon";
 import Home from "./screens/Home";
 import UploadVariants from "./screens/UploadVariants";
 import UploadDetails from "./screens/UploadDetails";
@@ -25,6 +26,13 @@ function App() {
         <Route
           exact
           path="/"
+          render={() => (
+            <ComingSoon />
+          )}
+        />
+        <Route
+          exact
+          path="/home"
           render={() => (
             <Page>
               <Home />
