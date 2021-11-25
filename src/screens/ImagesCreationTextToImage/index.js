@@ -286,7 +286,7 @@ const ImagesCreationTextToImage = () => {
             <>
               <div className={styles.top}>
                 <h1 className={cn("h2", styles.heading)}>
-                  Your Amazing Resulting Image
+                  Your Amazing Masterpiece
                 </h1>
 
                 {apiStatusResponse.status === 'process' && (
