@@ -8,6 +8,7 @@ const ComingSoon = () => {
     <div className={styles.wrapper}>
       <img src="/images/logo.svg" alt="Meta Talent Market" />
       <form name="launch-newsletter" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="launch-newsletter" />
         <p>Please send us your email to be notified on project launch</p>
         <p>
           <TextInput
