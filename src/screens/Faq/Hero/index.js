@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Hero.module.sass";
 import Dropdown from "../../../components/Dropdown";
 import Icon from "../../../components/Icon";
@@ -53,6 +54,7 @@ const items = [
 ];
 
 const Hero = () => {
+  const { t, i18n } = useTranslation();
   const options = [];
   items.map((x) => options.push(x.title));
 
@@ -62,13 +64,12 @@ const Hero = () => {
     <div className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.top}>
-          <div className={styles.stage}>learn how to get started</div>
-          <h1 className={cn("h2", styles.title)}>Frequently asked questions</h1>
+          <div className={styles.stage}>{t('screens.faq.hero.subtitle')}</div>
+          <h1 className={cn("h2", styles.title)}>{t('screens.faq.hero.title')}</h1>
           <div className={styles.info}>
-            Join Stacks community now to get free updates and also alot of
-            freebies are waiting for you or{" "}
+            {t('screens.faq.hero.text')}{" "}
             <a href="/#" rel="noopener noreferrer">
-              Contact Support
+              {t('screens.faq.hero.contactSupport')}
             </a>
           </div>
           <Dropdown

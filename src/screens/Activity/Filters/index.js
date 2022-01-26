@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Filters.module.sass";
 import Checkbox from "../../../components/Checkbox";
 
@@ -9,6 +10,7 @@ const Filters = ({
   selectedFilters,
   setSelectedFilters,
 }) => {
+  const { t, i18n } = useTranslation();
   const handleChange = (filter) => {
     if (selectedFilters.includes(filter)) {
       setSelectedFilters(selectedFilters.filter((x) => x !== filter));
@@ -19,7 +21,7 @@ const Filters = ({
 
   return (
     <div className={cn(styles.filters, className)}>
-      <div className={styles.info}>Filters</div>
+      <div className={styles.info}>{t('screens.activity.filters.info')}</div>
       <div className={styles.group}>
         {filters.map((x, index) => (
           <Checkbox
@@ -33,10 +35,10 @@ const Filters = ({
       </div>
       <div className={styles.btns}>
         <button className={cn("button-stroke button-small", styles.button)}>
-          Select all
+          {t('screens.activity.filters.selectAll')}
         </button>
         <button className={cn("button-stroke button-small", styles.button)}>
-          Unslect all
+          {t('screens.activity.filters.deselectAll')}
         </button>
       </div>
     </div>

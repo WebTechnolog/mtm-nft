@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import OutsideClickHandler from "react-outside-click-handler";
 import styles from "./Notification.module.sass";
 import Icon from "../../Icon";
@@ -41,6 +42,7 @@ const items = [
 ];
 
 const Notification = ({ className }) => {
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   return (
@@ -54,7 +56,7 @@ const Notification = ({ className }) => {
         </button>
         {visible && (
           <div className={styles.body}>
-            <div className={cn("h4", styles.title)}>Notification</div>
+            <div className={cn("h4", styles.title)}>{t('components.header.notification.title')}</div>
             <div className={styles.list}>
               {items.map((x, index) => (
                 <Link
@@ -64,7 +66,7 @@ const Notification = ({ className }) => {
                   key={index}
                 >
                   <div className={styles.preview}>
-                    <img src={x.image} alt="Notification" />
+                    <img src={x.image} alt={t('components.header.notification.title')} />
                   </div>
                   <div className={styles.details}>
                     <div className={styles.subtitle}>{x.title}</div>
@@ -83,7 +85,7 @@ const Notification = ({ className }) => {
               to="/activity"
               onClick={() => setVisible(!visible)}
             >
-              See all
+              {t('components.header.notification.seeAll')}
             </Link>
           </div>
         )}

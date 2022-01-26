@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Footer.module.sass";
 import Group from "./Group";
 import Image from "../Image";
@@ -41,6 +42,7 @@ const items = [
 ];
 
 const Footers = () => {
+  const { t, i18n } = useTranslation();
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -63,7 +65,7 @@ const Footers = () => {
             </Link>
             <div className={styles.info}>The new Meta Talent Marketplace.</div>
             <div className={styles.version}>
-              <div className={styles.details}>Dark theme</div>
+              <div className={styles.details}>{t('components.footer.theme')}</div>
               <Theme className="theme-big" />
             </div>
           </div>
@@ -73,17 +75,16 @@ const Footers = () => {
             ))}
           </div>
           <div className={styles.col}>
-            <div className={styles.category}>Join Newsletter</div>
+            <div className={styles.category}>{t('components.footer.newsletter.title')}</div>
             <div className={styles.text}>
-              Subscribe our newsletter to get more free design course and
-              resource
+              {t('components.footer.newsletter.text')}
             </div>
             <Form
               className={styles.form}
               value={email}
               setValue={setEmail}
               onSubmit={() => handleSubmit()}
-              placeholder="Enter your email"
+              placeholder={t('components.footer.email.placeholder')}
               type="email"
               name="email"
             />
@@ -91,10 +92,10 @@ const Footers = () => {
         </div>
         <div className={styles.foot}>
           <div className={styles.copyright}>
-            Copyright © 2021 Meta Talent Market. All rights reserved
+            Copyright © 2021 Meta Talent Market. {t('components.footer.copyright')}
           </div>
           <div className={styles.note}>
-            We use cookies for better service. <a href="/#">Accept</a>
+            {t('components.footer.cookies.text')} <a href="/#">{t('components.footer.cookies.button')}</a>
           </div>
         </div>
       </div>

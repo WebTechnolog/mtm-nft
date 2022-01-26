@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import OutsideClickHandler from "react-outside-click-handler";
 import styles from "./Actions.module.sass";
 import Transfer from "../Transfer";
@@ -10,6 +11,7 @@ import Icon from "../Icon";
 import Modal from "../../components/Modal";
 
 const Actions = ({ className }) => {
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [visibleModalTransfer, setVisibleModalTransfer] = useState(false);
   const [visibleModalRemoveSale, setVisibleModalRemoveSale] = useState(false);
@@ -18,27 +20,27 @@ const Actions = ({ className }) => {
 
   const items = [
     {
-      title: "Change price",
+      title: t('components.actions.changePrice'),
       icon: "coin",
       action: () => console.log("coin"),
     },
     {
-      title: "Transfer token",
+      title: t('components.actions.transferToken'),
       icon: "arrow-right-square",
       action: () => setVisibleModalTransfer(true),
     },
     {
-      title: "Remove from sale",
+      title: t('components.actions.removeFromSale'),
       icon: "close-circle",
       action: () => setVisibleModalRemoveSale(true),
     },
     {
-      title: "Burn token",
+      title: t('components.actions.burnToken'),
       icon: "close-circle",
       action: () => setVisibleModalBurn(true),
     },
     {
-      title: "Report",
+      title: t('components.actions.report'),
       icon: "info-circle",
       action: () => setVisibleModalReport(true),
     },

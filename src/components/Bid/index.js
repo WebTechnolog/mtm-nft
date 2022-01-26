@@ -1,27 +1,29 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Bid.module.sass";
 
-const items = [
-  {
-    title: "Enter bid",
-    value: "MTT",
-  },
-  {
-    title: "Your balance",
-    value: "8.498 MTT",
-  },
-  {
-    title: "Service fee",
-    value: "0 MTT",
-  },
-  {
-    title: "Total bid amount",
-    value: "0 MTT",
-  },
-];
-
 const Bid = ({ className }) => {
+  const { t, i18n } = useTranslation();
+  const items = [
+    {
+      title: t('components.bid.enterBid'),
+      value: "MTT",
+    },
+    {
+      title: t('components.bid.yourBalance'),
+      value: "8.498 MTT",
+    },
+    {
+      title: t('components.bid.serviceFee'),
+      value: "0 MTT",
+    },
+    {
+      title: t('components.bid.totalBidAmount'),
+      value: "0 MTT",
+    },
+  ];
+
   return (
     <div className={cn(className, styles.checkout)}>
       <div className={cn("h4", styles.title)}>Place a bid</div>

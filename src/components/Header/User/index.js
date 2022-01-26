@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import OutsideClickHandler from "react-outside-click-handler";
 import styles from "./User.module.sass";
 import Icon from "../../Icon";
@@ -29,6 +30,7 @@ const items = [
 ];
 
 const User = ({ className }) => {
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   return (
@@ -36,7 +38,7 @@ const User = ({ className }) => {
       <div className={cn(styles.user, className)}>
         <div className={styles.head} onClick={() => setVisible(!visible)}>
           <div className={styles.avatar}>
-            <img src="/images/content/avatar-user.jpg" alt="Avatar" />
+            <img src="/images/content/avatar-user.jpg" alt={t('components.header.user.avatar')} />
           </div>
           <div className={styles.wallet}>
             7.00698 <span className={styles.currency}>MTT</span>
@@ -60,14 +62,14 @@ const User = ({ className }) => {
                   />
                 </div>
                 <div className={styles.details}>
-                  <div className={styles.info}>Balance</div>
+                  <div className={styles.info}>{t('components.header.user.balance')}</div>
                   <div className={styles.price}>4.689 MTT</div>
                 </div>
               </div>
               <button
                 className={cn("button-stroke button-small", styles.button)}
               >
-                Manage fun on Coinbase
+                {t('components.header.user.manageFun')}
               </button>
             </div>
             <div className={styles.menu}>

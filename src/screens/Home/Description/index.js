@@ -1,27 +1,30 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import styles from "./Description.module.sass";
 import Image from "../../../components/Image";
 
 const Description = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className={styles.section}>
       <div className={cn("container", styles.container)}>
         <div className={styles.wrap}>
-          <div className={styles.stage}>Save your time with Stacks</div>
+          <div className={styles.stage}>{t('screens.home.description.subtitle')}</div>
           <h1 className={cn("h1", styles.title)}>
-            Earn free crypto with Meta Talent Market
+            {t('screens.home.description.title')}
           </h1>
           <div className={styles.text}>
-            A creative agency that lead and inspire
+            {t('screens.home.description.text')}
           </div>
           <div className={styles.btns}>
             <Link className={cn("button", styles.button)} to="/upload-variants">
-              Create item
+              {t('screens.home.description.buttonCreateItem')}
             </Link>
             <Link className={cn("button-stroke", styles.button)} to="/search01">
-              Discover more
+              {t('screens.home.description.buttonDiscoverMore')}
             </Link>
           </div>
         </div>

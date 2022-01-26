@@ -1,0 +1,187 @@
+{
+  "form": {
+    "search": "Search",
+    "upload": "Upload"
+  },
+  "button": {
+    "startYourSearch": "Start your search"
+  },
+  "components": {
+    "actions": {
+      "changePrice": "Change price",
+      "transferToken": "Transfer token",
+      "removeFromSale": "Remove from sale",
+      "burnToken": "Burn token",
+      "report": "Report"
+    },
+    "bid": {
+      "enterBid": "Enter bid",
+      "yourBalance": "Your balance",
+      "serviceFee": "Service fee",
+      "totalBidAmount": "Total bid amount"
+    },
+    "burn": {
+      "title": "Burn token",
+      "text": "Are you sure to burn this token? This action cannot be undone. Token will be transfered to zero address",
+      "buttonOk": "Continue",
+      "buttonCancel": "Cancel"
+    },
+    "card": {
+      "placeABid": "Place a bid",
+      "highestBid": "Highest bid"
+    },
+    "connect": {
+      "info": "You need to connect your wallet first to sign messages and send transaction to Ethereum network",
+      "buttonOk": "Connect wallet",
+      "buttonCancel": "Cancel"
+    },
+    "control": {
+      "backToHome": "Back to home"
+    },
+    "footer": {
+      "theme": "Dark Theme",
+      "newsletter": {
+        "title": "Join Newsletter",
+        "text": "Subscribe our newsletter to get more free design course and resource"
+      },
+      "email": {
+        "placeholder": "Enter your email"
+      },
+      "copyright": "All rights reserved",
+      "cookies": {
+        "text": "We use cookies for better service.",
+        "button": "Accept"
+      }
+    },
+    "header": {
+      "notification": {
+        "title": "Notification",
+        "seeAll": "See All"
+      },
+      "user": {
+        "avatar": "Avatar",
+        "balance": "Balance",
+        "manageFun": "Manage fun on Coinbase"
+      }
+    },
+    "hotBid": {
+      "title": "Hot bid"
+    },
+    "removeSale": {
+      "title": "Remove from sale",
+      "text": "Do you really want to remove your item from sale? You can put it on sale anytime",
+      "buttonOk": "Remove now",
+      "buttonCancel": "Cancel"
+    },
+    "report": {
+      "title": "Report",
+      "text": "Describe why you think this item should be removed from marketplace",
+      "message": {
+        "label": "message",
+        "placeholder": "Tell us the details"
+      },
+      "buttonOk": "Send now",
+      "buttonCancel": "Cancel"
+    },
+    "transfer": {
+      "title": "Transfer token",
+      "text": "You can transfer tokens from your address to another",
+      "info": "Receiver address",
+      "address": {
+        "placeholder": "Paste address"
+      },
+      "buttonOk": "Continue",
+      "buttonCancel": "Cancel"
+    }
+  },
+  "screens": {
+    "activity": {
+      "filters": {
+        "info": "Filters",
+        "selectAll": "Select all",
+        "deselectAll": "Deselect all"
+      },
+      "title": "Activity",
+      "markAllAsRead": "Mark all as read",
+      "notification": "Notification",
+      "iconNotification": "Icon notification"
+    },
+    "comingSoon": {
+      "text": "Please send us your email to be notified on project launch",
+      "button": "Send"
+    },
+    "connectWallet": {
+      "title": "Connect your wallet",
+      "scanToConnect": "Scan to connect",
+      "doNotHaveApp": "Don’t have a wallet app?",
+      "termsOfService": "Terms of service",
+      "checkboxAge": "I am at least 13 year old",
+      "checkboxConditions": "I agree Stack terms of service",
+      "buttonOk": "Get started now",
+      "buttonCancel": "Cancel"
+    },
+    "faq": {
+      "hero": {
+        "subtitle": "learn how to get started",
+        "title": "Frequently asked questions",
+        "text": "Join Stacks community now to get free updates and also alot of freebies are waiting for you or",
+        "contactSupport": "Contact Support"
+      }
+    },
+    "home": {
+      "collections": {
+        "title": "Hot collections",
+        "by": "By",
+        "items": "items"
+      },
+      "description": {
+        "subtitle": "Save your time with Stacks",
+        "title": "Earn free crypto with Meta Talent Market",
+        "text": "A creative agency that lead and inspire",
+        "buttonCreateItem": "Create item",
+        "buttonDiscoverMore": "Discover more"
+      },
+      "discover": {
+        "title": "Discover",
+        "filter": "Filter",
+        "price": "Price",
+        "likes": "likes",
+        "creator": "creator",
+        "priceRange": "Price range",
+        "loadMore": "Load more"
+      },
+      "hero": {
+        "subtitle": "Create, explore, & collect digital art NFTs.",
+        "title": "The new Meta Talent Marketplace.",
+        "creator": "Creator",
+        "instantPrice": "Instant price",
+        "currentBid": "Current Bid",
+        "auctionEndingIn": "Auction ending in",
+        "hours": "Hrs",
+        "minutes": "mins",
+        "seconds": "secs",
+        "placeABid": "Place a bid",
+        "viewItem": "View item"
+      },
+      "popular": {
+        "date": {
+          "today": "Today",
+          "morning": "Morning",
+          "dinner": "Dinner",
+          "evening": "Evening"
+        },
+        "direction": {
+          "sellers": "Sellers",
+          "buyers": "Buyers"
+        },
+        "title": "Popular",
+        "timeframe": "timeframe"
+      },
+      "selection": {
+        "placeABid": "Place a bid",
+        "latestUpload": "Latest upload from creators",
+        "discoverMore": "Discover more"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Discover.module.sass";
 import { Range, getTrackBackground } from "react-range";
 import Slider from "react-slick";
@@ -24,6 +25,7 @@ const SlickArrow = ({ currentSlide, slideCount, children, ...props }) => (
 );
 
 const Discover = () => {
+  const { t, i18n } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [date, setDate] = useState(dateOptions[0]);
   const [price, setPrice] = useState(priceOptions[0]);
@@ -71,7 +73,7 @@ const Discover = () => {
   return (
     <div className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
-        <h3 className={cn("h3", styles.title)}>Discover</h3>
+        <h3 className={cn("h3", styles.title)}>{t('screens.home.discover.title')}</h3>
         <div className={styles.top}>
           <div className={styles.dropdown}>
             <Dropdown
@@ -106,7 +108,7 @@ const Discover = () => {
             className={cn(styles.filter, { [styles.active]: visible })}
             onClick={() => setVisible(!visible)}
           >
-            <div className={styles.text}>Filter</div>
+            <div className={styles.text}>{t('screens.home.discover.filter')}</div>
             <div className={styles.toggle}>
               <Icon name="filter" size="18" />
               <Icon name="close" size="10" />
@@ -116,7 +118,7 @@ const Discover = () => {
         <div className={cn(styles.filters, { [styles.active]: visible })}>
           <div className={styles.sorting}>
             <div className={styles.cell}>
-              <div className={styles.label}>Price</div>
+              <div className={styles.label}>{t('screens.home.discover.price')}</div>
               <Dropdown
                 className={styles.dropdown}
                 value={price}
@@ -125,7 +127,7 @@ const Discover = () => {
               />
             </div>
             <div className={styles.cell}>
-              <div className={styles.label}>likes</div>
+              <div className={styles.label}>{t('screens.home.discover.likes')}</div>
               <Dropdown
                 className={styles.dropdown}
                 value={likes}
@@ -134,7 +136,7 @@ const Discover = () => {
               />
             </div>
             <div className={styles.cell}>
-              <div className={styles.label}>creator</div>
+              <div className={styles.label}>{t('screens.home.discover.creator')}</div>
               <Dropdown
                 className={styles.dropdown}
                 value={creator}
@@ -143,7 +145,7 @@ const Discover = () => {
               />
             </div>
             <div className={styles.cell}>
-              <div className={styles.label}>Price range</div>
+              <div className={styles.label}>{t('screens.home.discover.priceRange')}</div>
               <Range
                 values={values}
                 step={STEP}
@@ -233,7 +235,7 @@ const Discover = () => {
         </div>
         <div className={styles.btns}>
           <button className={cn("button-stroke button-small", styles.button)}>
-            <span>Load more</span>
+            <span>{t('screens.home.discover.loadMore')}</span>
           </button>
         </div>
       </div>

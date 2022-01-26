@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import styles from "./Selection.module.sass";
 import Icon from "../../../components/Icon";
@@ -72,6 +73,8 @@ const users = [
 ];
 
 const Selection = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className={cn("section-pb", styles.section)}>
       <div className={cn("container", styles.container)}>
@@ -134,7 +137,7 @@ const Selection = () => {
                           styles.button
                         )}
                       >
-                        Place a bid
+                        {t('screens.home.selection.placeABid')}
                       </button>
                     </div>
                   </Link>
@@ -144,7 +147,7 @@ const Selection = () => {
         </div>
         <div className={styles.sidebar}>
           <div className={styles.info}>
-            Latest upload from creators{" "}
+            {t('screens.home.selection.latestUpload')}{" "}
             <span className={styles.smile} role="img" aria-label="fire">
               🔥
             </span>
@@ -170,7 +173,7 @@ const Selection = () => {
             className={cn("button-stroke button-small", styles.button)}
             to="/search01"
           >
-            <span>Discover more</span>
+            <span>{t('screens.home.selection.discoverMore')}</span>
             <Icon name="arrow-next" size="10" />
           </Link>
         </div>

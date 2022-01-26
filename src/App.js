@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Suspense } from 'react';
 import "./styles/app.sass";
 import Page from "./components/Page";
 import ComingSoon from "./screens/ComingSoon";
@@ -179,4 +180,11 @@ function App() {
   );
 }
 
-export default App;
+// here app catches the suspense from page in case translations are not yet loaded
+export default function WrappedApp() {
+  return (
+    <Suspense fallback="...is loading">
+      <App />
+    </Suspense>
+  );
+}

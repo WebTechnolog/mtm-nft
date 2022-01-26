@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import styles from "./Hero.module.sass";
@@ -53,6 +54,7 @@ const SlickArrow = ({ currentSlide, slideCount, children, ...props }) => (
 );
 
 const Hero = () => {
+  const { t, i18n } = useTranslation();
   const settings = {
     infinite: false,
     speed: 500,
@@ -79,13 +81,13 @@ const Hero = () => {
         <div className={cn("container", styles.container)}>
           <div className={styles.head}>
             <div className={styles.stage}>
-              Create, explore, & collect digital art NFTs.
+              {t('screens.home.hero.subtitle')}
             </div>
             <h2 className={cn("h3", styles.title)}>
-              The new Meta Talent Marketplace.
+              {t('screens.home.hero.title')}
             </h2>
             <Link className={cn("button-stroke", styles.button)} to="/search01">
-              Start your search
+              {t('button.startYourSearch')}
             </Link>
           </div>
           <div className={styles.wrapper}>
@@ -102,7 +104,7 @@ const Hero = () => {
                             <img src={x.avatar} alt="Avatar" />
                           </div>
                           <div className={styles.description}>
-                            <div className={styles.category}>Creator</div>
+                            <div className={styles.category}>{t('screens.home.hero.creator')}</div>
                             <div className={styles.text}>{x.creator}</div>
                           </div>
                         </div>
@@ -111,28 +113,28 @@ const Hero = () => {
                             <Icon name="stop" size="24" />
                           </div>
                           <div className={styles.description}>
-                            <div className={styles.category}>Instant price</div>
+                            <div className={styles.category}>{t('screens.home.hero.instantPrice')}</div>
                             <div className={styles.text}>3.5 MTT</div>
                           </div>
                         </div>
                       </div>
                       <div className={styles.wrap}>
-                        <div className={styles.info}>Current Bid</div>
+                        <div className={styles.info}>{t('screens.home.hero.currentBid')}</div>
                         <div className={styles.currency}>{x.currency}</div>
                         <div className={styles.price}>{x.price}</div>
-                        <div className={styles.info}>Auction ending in</div>
+                        <div className={styles.info}>{t('screens.home.hero.auctionEndingIn')}</div>
                         <div className={styles.timer}>
                           <div className={styles.box}>
                             <div className={styles.number}>19</div>
-                            <div className={styles.time}>Hrs</div>
+                            <div className={styles.time}>{t('screens.home.hero.hours')}</div>
                           </div>
                           <div className={styles.box}>
                             <div className={styles.number}>24</div>
-                            <div className={styles.time}>mins</div>
+                            <div className={styles.time}>{t('screens.home.hero.minutes')}</div>
                           </div>
                           <div className={styles.box}>
                             <div className={styles.number}>19</div>
-                            <div className={styles.time}>secs</div>
+                            <div className={styles.time}>{t('screens.home.hero.seconds')}</div>
                           </div>
                         </div>
                       </div>
@@ -141,13 +143,13 @@ const Hero = () => {
                           className={cn("button", styles.button)}
                           onClick={() => setVisibleModalBid(true)}
                         >
-                          Place a bid
+                          {t('screens.home.hero.placeABid')}
                         </button>
                         <Link
                           className={cn("button-stroke", styles.button)}
                           to="/item"
                         >
-                          View item
+                          {t('screens.home.hero.viewItem')}
                         </Link>
                       </div>
                     </div>

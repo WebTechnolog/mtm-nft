@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import styles from "./Popular.module.sass";
@@ -95,10 +96,20 @@ const SlickArrow = ({ currentSlide, slideCount, children, ...props }) => (
   <button {...props}>{children}</button>
 );
 
-const dateOptions = ["Today", "Morning", "Dinner", "Evening"];
-const directionOptions = ["Sellers", "Buyers"];
-
 const Popular = () => {
+  const { t, i18n } = useTranslation();
+
+  const dateOptions = [
+    t('screens.home.popular.date.today'),
+    t('screens.home.popular.date.morning'),
+    t('screens.home.popular.date.dinner'),
+    t('screens.home.popular.date.evening'),
+  ];
+  const directionOptions = [
+    t('screens.home.popular.direction.sellers'),
+    t('screens.home.popular.direction.buyers'),
+  ];
+
   const settings = {
     infinite: false,
     speed: 500,
@@ -146,7 +157,7 @@ const Popular = () => {
       <div className={cn("container", styles.container)}>
         <div className={styles.top}>
           <div className={styles.box}>
-            <div className={styles.stage}>Popular</div>
+            <div className={styles.stage}>{t('screens.home.popular.title')}</div>
             <DropdownEmpty
               className={styles.dropdown}
               value={direction}
@@ -155,7 +166,7 @@ const Popular = () => {
             />
           </div>
           <div className={styles.field}>
-            <div className={styles.label}>timeframe</div>
+            <div className={styles.label}>{t('screens.home.popular.timeframe')}</div>
             <Dropdown
               className={styles.dropdown}
               value={date}

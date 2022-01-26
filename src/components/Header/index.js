@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Header.module.sass";
 import Icon from "../Icon";
 import Image from "../Image";
@@ -34,7 +35,17 @@ const nav = [
   },
 ];
 
+const locales = {
+  en: {
+    nativeName: 'Eng'
+  },
+  ru: {
+    nativeName: 'Рус'
+  }
+};
+
 const Headers = () => {
+  const { t, i18n } = useTranslation();
   const [visibleNav, setVisibleNav] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -54,6 +65,15 @@ const Headers = () => {
           />
           <span>Meta<br/> Talent<br/> Marketplace</span>
         </Link>
+
+        <select className={styles.languageSelector} onChange={(element) => i18n.changeLanguage(element.target.value)}>
+          {Object.keys(locales).map((locale) => (
+            <option key={locale} value={locale}>
+              {locales[locale].nativeName}
+            </option>
+          ))}
+        </select>
+
         <div className={cn(styles.wrapper, { [styles.active]: visibleNav })}>
           <nav className={styles.nav}>
             {nav.map((x, index) => (
@@ -78,7 +98,7 @@ const Headers = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               name="search"
-              placeholder="Search"
+              placeholder={t('form.search')}
               required
             />
             <button className={styles.result}>
@@ -89,7 +109,7 @@ const Headers = () => {
             className={cn("button-small", styles.button)}
             to="/upload-variants"
           >
-            Upload
+            {t('form.upload')}
           </Link>
         </div>
         <Notification className={styles.notification} />
@@ -97,7 +117,7 @@ const Headers = () => {
           className={cn("button-small", styles.button)}
           to="/upload-variants"
         >
-          Upload
+          {t('form.upload')}
         </Link>
         {/* <Link
           className={cn("button-stroke button-small", styles.button)}

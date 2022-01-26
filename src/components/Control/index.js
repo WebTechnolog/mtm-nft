@@ -1,10 +1,13 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import styles from "./Control.module.sass";
 import Icon from "../Icon";
 
 const Control = ({ className, item }) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className={cn(styles.control, className)}>
       <div className={cn("container", styles.container)}>
@@ -13,7 +16,7 @@ const Control = ({ className, item }) => {
           to="/"
         >
           <Icon name="arrow-prev" size="10" />
-          <span>Back to home</span>
+          <span>{t('components.control.backToHome')}</span>
         </Link>
         <div className={styles.breadcrumbs}>
           {item.map((x, index) => (

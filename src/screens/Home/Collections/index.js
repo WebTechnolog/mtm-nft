@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import styles from "./Collections.module.sass";
@@ -49,6 +50,7 @@ const SlickArrow = ({ currentSlide, slideCount, children, ...props }) => (
 );
 
 const Collections = () => {
+  const { t, i18n } = useTranslation();
   const settings = {
     infinite: false,
     speed: 500,
@@ -84,7 +86,7 @@ const Collections = () => {
     <div className={cn("section-bg", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.wrapper}>
-          <h3 className={cn("h3", styles.title)}>Hot collections</h3>
+          <h3 className={cn("h3", styles.title)}>{t('screens.home.collections.title')}</h3>
           <div className={styles.inner}>
             <Slider className="collection-slider" {...settings}>
               {items.map((x, index) => (
@@ -103,11 +105,11 @@ const Collections = () => {
                         <img src={x.avatar} alt="Avatar" />
                       </div>
                       <div className={styles.author}>
-                        By <span>{x.author}</span>
+                        {t('screens.home.collections.by')} <span>{x.author}</span>
                       </div>
                     </div>
                     <div className={cn("status-stroke-black", styles.counter)}>
-                      <span>{x.counter}</span> items
+                      <span>{x.counter}</span> {t('screens.home.collections.items')}
                     </div>
                   </div>
                 </Link>

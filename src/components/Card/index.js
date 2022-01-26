@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import styles from "./Card.module.sass";
 import Icon from "../Icon";
 
 const Card = ({ className, item }) => {
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   return (
@@ -27,7 +29,7 @@ const Card = ({ className, item }) => {
             <Icon name="heart" size="20" />
           </button>
           <button className={cn("button-small", styles.button)}>
-            <span>Place a bid</span>
+            <span>{t('components.card.placeABid')}</span>
             <Icon name="scatter-up" size="16" />
           </button>
         </div>
@@ -52,7 +54,7 @@ const Card = ({ className, item }) => {
         <div className={styles.foot}>
           <div className={styles.status}>
             <Icon name="candlesticks-up" size="20" />
-            Highest bid <span>{item.highestBid}</span>
+            {t('components.card.highestBid')} <span>{item.highestBid}</span>
           </div>
           <div
             className={styles.bid}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./ConnectWallet.module.sass";
 import Icon from "../../components/Icon";
 import Checkbox from "../../components/Checkbox";
@@ -25,6 +26,7 @@ const menu = [
 ];
 
 const Connect = () => {
+  const { t, i18n } = useTranslation();
   const [age, setAge] = useState(true);
   const [conditions, setConditions] = useState(false);
 
@@ -34,7 +36,7 @@ const Connect = () => {
         <div className={styles.head}>
           <Link className={styles.back} to="/">
             <Icon name="arrow-prev" size="24" />
-            <div className={cn("h2", styles.stage)}>Connect your wallet</div>
+            <div className={cn("h2", styles.stage)}>{t('screens.connectWallet.title')}</div>
           </Link>
         </div>
         <div className={styles.body}>
@@ -67,7 +69,7 @@ const Connect = () => {
               />
             </div>
             <div className={styles.item}>
-              <div className={cn("h3", styles.title)}>Scan to connect</div>
+              <div className={cn("h3", styles.title)}>{t('screens.connectWallet.scanToConnect')}</div>
               <div className={styles.text}>Powered by MTM.Wallet</div>
               <div className={styles.box}>
                 <div className={styles.code}>
@@ -75,11 +77,11 @@ const Connect = () => {
                 </div>
               </div>
               <button className={cn("button-stroke", styles.button)}>
-                Don’t have a wallet app?
+                {t('screens.connectWallet.doNotHaveApp')}
               </button>
             </div>
             <div className={styles.item}>
-              <div className={cn("h3", styles.title)}>Terms of service</div>
+              <div className={cn("h3", styles.title)}>{t('screens.connectWallet.termsOfService')}</div>
               <div className={styles.text}>
                 Please take a few minutes to read and understand{" "}
                 <span>Stacks Terms of Service</span>. To continue, you’ll need
@@ -89,7 +91,7 @@ const Connect = () => {
                 <img
                   srcSet="/images/content/connect-pic@2x.jpg 2x"
                   src="/images/content/connect-pic.jpg"
-                  alt="Connect wallet"
+                  alt={t('screens.connectWallet.title')}
                 />
               </div>
               <div className={styles.variants}>
@@ -97,21 +99,21 @@ const Connect = () => {
                   className={styles.checkbox}
                   value={age}
                   onChange={() => setAge(!age)}
-                  content="I am at least 13 year old"
+                  content={t('screens.connectWallet.checkboxAge')}
                 />
                 <Checkbox
                   className={styles.checkbox}
                   value={conditions}
                   onChange={() => setConditions(!conditions)}
-                  content="I agree Stack terms of service"
+                  content={t('screens.connectWallet.checkboxConditions')}
                 />
               </div>
               <div className={styles.btns}>
                 <button className={cn("button-stroke", styles.button)}>
-                  Cancel
+                  {t('screens.connectWallet.buttonCancel')}
                 </button>
                 <button className={cn("button", styles.button)}>
-                  Get started now
+                  {t('screens.connectWallet.buttonOk')}
                 </button>
               </div>
             </div>

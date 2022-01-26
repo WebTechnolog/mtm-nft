@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Activity.module.sass";
 import Control from "../../components/Control";
 import Loader from "../../components/Loader";
@@ -89,6 +90,7 @@ const filters = [
 const navLinks = ["My activity", "Following", "All activity"];
 
 const Activity = () => {
+  const { t, i18n } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [visible, setVisible] = useState(0);
@@ -99,14 +101,14 @@ const Activity = () => {
       <div className={cn("section-pt80", styles.body)}>
         <div className={cn("container", styles.container)}>
           <div className={styles.top}>
-            <h1 className={cn("h2", styles.title)}>Activity</h1>
+            <h1 className={cn("h2", styles.title)}>{t('screens.activity.title')}</h1>
             <button
               className={cn(
                 "button-stroke button-small mobile-hide",
                 styles.button
               )}
             >
-              Mark all as read
+              {t('screens.activity.markAllAsRead')}
             </button>
             <button
               className={cn(
@@ -139,12 +141,12 @@ const Activity = () => {
                 {items.map((x, index) => (
                   <div className={styles.item} key={index}>
                     <div className={styles.preview}>
-                      <img src={x.image} alt="Notification" />
+                      <img src={x.image} alt={t('screens.activity.notification')} />
                       <div
                         className={styles.icon}
                         style={{ backgroundColor: x.color }}
                       >
-                        <img src={x.icon} alt="Icon notification" />
+                        <img src={x.icon} alt={t('screens.activity.iconNotification')} />
                       </div>
                     </div>
                     <div className={styles.details}>
@@ -163,7 +165,7 @@ const Activity = () => {
                 styles.button
               )}
             >
-              Mark all as read
+              {t('screens.activity.markAllAsRead')}
             </button>
             <Filters
               className={cn(styles.filters, { [styles.active]: visible })}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Search01.module.sass";
 import { Range, getTrackBackground } from "react-range";
 import Icon from "../../components/Icon";
@@ -17,6 +18,7 @@ const colorOptions = ["All colors", "Black", "Green", "Pink", "Purple"];
 const creatorOptions = ["Verified only", "All", "Most liked"];
 
 const Search = () => {
+  const { t, i18n } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [date, setDate] = useState(dateOptions[0]);
   const [likes, setLikes] = useState(likesOptions[0]);
@@ -51,7 +53,7 @@ const Search = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               name="search"
-              placeholder="Search ..."
+              placeholder={t('form.search') + ' ...'}
               required
             />
             <button className={styles.result}>

@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import styles from "./HotBid.module.sass";
 import Icon from "../Icon";
@@ -13,6 +14,8 @@ const SlickArrow = ({ currentSlide, slideCount, children, ...props }) => (
 );
 
 const Hot = ({ classSection }) => {
+  const { t, i18n } = useTranslation();
+
   const settings = {
     infinite: false,
     speed: 500,
@@ -55,7 +58,7 @@ const Hot = ({ classSection }) => {
     <div className={cn(classSection, styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.wrapper}>
-          <h3 className={cn("h3", styles.title)}>Hot bid</h3>
+          <h3 className={cn("h3", styles.title)}>{t('components.hotBid.title')}</h3>
           <div className={styles.inner}>
             <Slider className="bid-slider" {...settings}>
               {bids.map((x, index) => (
