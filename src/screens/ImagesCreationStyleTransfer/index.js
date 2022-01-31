@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./ImagesCreationStyleTransfer.module.sass";
 import Switch from "../../components/Switch";
 import Icon from "../../components/Icon";
 import { getTrackBackground, Range } from "react-range";
 
 const ImagesCreationStyleTransfer = () => {
+  const { t, i18n } = useTranslation();
   const [isAdvancedEnabled, setIsAdvancedEnabled] = useState(false);
   const [isMultipleInputs, setIsMultipleInputs] = useState(false);
   const [isVideoChosen, setIsVideoChosen] = useState(false);
@@ -21,26 +23,28 @@ const ImagesCreationStyleTransfer = () => {
         <div className={cn("container", styles.container)}>
           <div className={styles.top}>
             <h1 className={cn("h2", styles.heading)}>
-              Create Something Amazing
+              {t('screens.imageCreationStyleTransfer.title')}
             </h1>
             <div className={styles.switchControl}>
               <Switch value={isAdvancedEnabled} setValue={setIsAdvancedEnabled} />
-              <span>Show advanced options</span>
+              <span>{t('screens.imageCreationStyleTransfer.showAdvancedOptions')}</span>
             </div>
           </div>
 
           <div className={styles.list}>
             <div className={styles.item}>
-              <div className={styles.category}>Input Image</div>
+              <div className={styles.category}>
+                {t('screens.imageCreationStyleTransfer.items.inputImage.title')}
+              </div>
               <div className={styles.itemHeader}>
                 <div className={styles.note}>
-                  Choose an image to apply styles to
+                  {t('screens.imageCreationStyleTransfer.items.inputImage.note')}
                 </div>
 
                 {isAdvancedEnabled && (
                   <div className={styles.switchControl}>
                     <Switch value={isMultipleInputs} setValue={setIsMultipleInputs} />
-                    <span>Try multiple inputs</span>
+                    <span>{t('screens.imageCreationStyleTransfer.items.inputImage.multiple')}</span>
                   </div>
                 )}
               </div>
@@ -56,16 +60,18 @@ const ImagesCreationStyleTransfer = () => {
             </div>
 
             <div className={styles.item}>
-              <div className={styles.category}>Style Image</div>
+              <div className={styles.category}>
+                {t('screens.imageCreationStyleTransfer.items.styleImage.title')}
+              </div>
               <div className={styles.itemHeader}>
                 <div className={styles.note}>
-                  Choose a style to apply to your input
+                  {t('screens.imageCreationStyleTransfer.items.styleImage.note')}
                 </div>
 
                 {isAdvancedEnabled && (
                   <div className={styles.switchControl}>
                     <Switch value={isMultipleInputs} setValue={setIsMultipleInputs} />
-                    <span>Try multiple inputs</span>
+                    <span>{t('screens.imageCreationStyleTransfer.items.styleImage.multiple')}</span>
                   </div>
                 )}
               </div>
@@ -83,41 +89,45 @@ const ImagesCreationStyleTransfer = () => {
             {isAdvancedEnabled && (
               <>
                 <div className={styles.item}>
-                  <div className={styles.category}>Blend With Another Style?</div>
+                  <div className={styles.category}>
+                    {t('screens.imageCreationStyleTransfer.items.blendWithAnotherStyle.title')}
+                  </div>
                   <p className={styles.note}>
-                    Optional. Useful for mixing styles, or using masks to apply different styles to different parts of the image. Styles you add this way will be used together in the same creation.
+                    {t('screens.imageCreationStyleTransfer.items.blendWithAnotherStyle.note')}
                   </p>
                   <p>
                     <button className={cn("button")}>
-                      Add style
+                      {t('screens.imageCreationStyleTransfer.items.blendWithAnotherStyle.button')}
                     </button>
                   </p>
                 </div>
 
                 <div className={styles.item}>
-                  <div className={styles.category}>Creation Settings</div>
+                  <div className={styles.category}>
+                    {t('screens.imageCreationStyleTransfer.items.creationSettings.title')}
+                  </div>
                   <p className={styles.note}>
-                    These options affect the creation as a whole.
+                    {t('screens.imageCreationStyleTransfer.items.creationSettings.note')}
                   </p>
                   <div className={styles.optionsList}>
                     <div className={styles.optionsItem}>
-                      <div><strong>Color</strong></div>
+                      <div><strong>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.color.title')}</strong></div>
                       <div className={styles.switchControl}>
                         <Switch value={isVideoChosen} setValue={setIsVideoChosen} />
-                        <span>Use colors from input image</span>
+                        <span>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.color.note')}</span>
                       </div>
                     </div>
 
                     <div className={styles.optionsItem}>
-                      <div><strong>Sharpen</strong></div>
+                      <div><strong>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.sharpen.title')}</strong></div>
                       <div className={styles.switchControl}>
                         <Switch value={isVideoChosen} setValue={setIsVideoChosen} />
-                        <span>Reduce bluriness by running the algorithm for longer</span>
+                        <span>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.sharpen.note')}</span>
                       </div>
                     </div>
 
                     <div className={styles.optionsItem}>
-                      <div><strong>Content Weight</strong></div>
+                      <div><strong>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.contentWeight.title')}</strong></div>
                       <Range
                         values={values}
                         step={STEP}
@@ -188,11 +198,11 @@ const ImagesCreationStyleTransfer = () => {
                           </div>
                         )}
                       />
-                      <p>How much should the output look like the input image?</p>
+                      <p>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.contentWeight.note')}</p>
                     </div>
 
                     <div className={styles.optionsItem}>
-                      <div><strong>Content Weight</strong></div>
+                      <div><strong>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.contentWeight.title')}</strong></div>
                       <Range
                         values={values}
                         step={STEP}
@@ -263,11 +273,11 @@ const ImagesCreationStyleTransfer = () => {
                           </div>
                         )}
                       />
-                      <p>How much should the output look like the input image?</p>
+                      <p>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.contentWeight.note')}</p>
                     </div>
 
                     <div className={styles.optionsItem}>
-                      <div><strong>Content Weight</strong></div>
+                      <div><strong>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.contentWeight.title')}</strong></div>
                       <Range
                         values={values}
                         step={STEP}
@@ -338,7 +348,7 @@ const ImagesCreationStyleTransfer = () => {
                           </div>
                         )}
                       />
-                      <p>How much should the output look like the input image?</p>
+                      <p>{t('screens.imageCreationStyleTransfer.items.creationSettings.options.contentWeight.note')}</p>
                     </div>
                   </div>
                 </div>
@@ -346,30 +356,30 @@ const ImagesCreationStyleTransfer = () => {
             )}
 
             <div className={styles.item}>
-              <div className={styles.category}>Video</div>
+              <div className={styles.category}>{t('screens.imageCreationStyleTransfer.items.video.title')}</div>
               <p className={styles.note}>
-                Get a short video of the creation process
+                {t('screens.imageCreationStyleTransfer.items.video.note')}
               </p>
               <div className={styles.switchControl}>
                 <Switch value={isVideoChosen} setValue={setIsVideoChosen} />
-                <span>Get a 10-20 second video of your creation being generated for 2 extra credits</span>
+                <span>{t('screens.imageCreationStyleTransfer.items.video.switch')}</span>
               </div>
             </div>
 
             <div className={styles.item}>
-              <div className={styles.category}>Resolution</div>
+              <div className={styles.category}>{t('screens.imageCreationStyleTransfer.items.resolution.title')}</div>
               <p className={styles.note}>
-                Choose an output size - higher resolution gives better results
+                {t('screens.imageCreationStyleTransfer.items.resolution.note')}
               </p>
             </div>
 
             <div className={styles.item}>
               <p>
                 <button className={cn("button", styles.buttonBig)}>
-                  Create (1 Credit)
+                  {t('screens.imageCreationStyleTransfer.items.submit.button')}
                 </button>
               </p>
-              <p>Note: by using this image creator, you agree to abide by our <a href="#">terms of service</a></p>
+              <p>{t('screens.imageCreationStyleTransfer.items.submit.terms.text1')} <a href="#">{t('screens.imageCreationStyleTransfer.items.submit.terms.text2')}</a></p>
             </div>
           </div>
         </div>

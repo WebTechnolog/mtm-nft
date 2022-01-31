@@ -7,6 +7,7 @@ import Group from "./Group";
 import Image from "../Image";
 import Form from "../Form";
 import Theme from "../Theme";
+import LanguageSelect from "../LanguageSelect";
 
 const items = [
   {
@@ -68,6 +69,7 @@ const Footers = () => {
               <div className={styles.details}>{t('components.footer.theme')}</div>
               <Theme className="theme-big" />
             </div>
+            <LanguageSelect className={styles.languageSelect}></LanguageSelect>
           </div>
           <div className={styles.col}>
             {items.map((x, index) => (

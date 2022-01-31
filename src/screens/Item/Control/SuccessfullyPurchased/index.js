@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./SuccessfullyPurchased.module.sass";
 import Icon from "../../../../components/Icon";
 
@@ -23,28 +24,30 @@ const socials = [
 ];
 
 const SuccessfullyPurchased = ({ className }) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className={cn(className, styles.wrap)}>
       <div className={cn("h2", styles.title)}>
-        Yay!{" "}
+        {t('screens.item.control.successfullyPurchased.title')}{" "}
         <span role="img" aria-label="firework">
           🎉
         </span>
       </div>
       <div className={styles.info}>
-        You successfully purchased <span>C O I N Z</span> from MTM
+        {t('screens.item.control.successfullyPurchased.info')} <span>C O I N Z</span> {t('screens.item.control.successfullyPurchased.from')} MTM
       </div>
       <div className={styles.table}>
         <div className={styles.row}>
-          <div className={styles.col}>Status</div>
-          <div className={styles.col}>Transaction ID</div>
+          <div className={styles.col}>{t('screens.item.control.successfullyPurchased.status')}</div>
+          <div className={styles.col}>{t('screens.item.control.successfullyPurchased.transactionID')}</div>
         </div>
         <div className={styles.row}>
-          <div className={styles.col}>Processing</div>
+          <div className={styles.col}>{t('screens.item.control.successfullyPurchased.processing')}</div>
           <div className={styles.col}>0msx836930...87r398</div>
         </div>
       </div>
-      <div className={styles.stage}>Time to show-off</div>
+      <div className={styles.stage}>{t('screens.item.control.successfullyPurchased.timeToShowOff')}</div>
       <div className={styles.socials}>
         {socials.map((x, index) => (
           <a

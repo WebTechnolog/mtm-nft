@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Control.module.sass";
 import Checkout from "./Checkout";
 import Connect from "../../../components/Connect";
@@ -10,6 +11,7 @@ import SuccessfullyPurchased from "./SuccessfullyPurchased";
 import Modal from "../../../components/Modal";
 
 const Control = ({ className }) => {
+  const { t, i18n } = useTranslation();
   const [visibleModalPurchase, setVisibleModalPurchase] = useState(false);
   const [visibleModalBid, setVisibleModalBid] = useState(false);
   const [visibleModalAccept, setVisibleModalAccept] = useState(false);
@@ -24,7 +26,7 @@ const Control = ({ className }) => {
           </div>
           <div className={styles.details}>
             <div className={styles.info}>
-              Highest bid by <span>Kohaku Tora</span>
+              {t('screens.item.control.info')} <span>Kohaku Tora</span>
             </div>
             <div className={styles.cost}>
               <div className={styles.price}>1.46 MTT</div>
@@ -37,28 +39,28 @@ const Control = ({ className }) => {
             className={cn("button", styles.button)}
             onClick={() => setVisibleModalPurchase(true)}
           >
-            Purchase now
+            {t('screens.item.control.buttonPurchase')}
           </button>
           <button
             className={cn("button-stroke", styles.button)}
             onClick={() => setVisibleModalBid(true)}
           >
-            Place a bid
+            {t('screens.item.control.buttonPlaceABid')}
           </button>
         </div>
         <div className={styles.btns}>
           <button className={cn("button-stroke", styles.button)}>
-            View all
+            {t('screens.item.control.buttonViewAll')}
           </button>
           <button
             className={cn("button", styles.button)}
             onClick={() => setVisibleModalAccept(true)}
           >
-            Accept
+            {t('screens.item.control.buttonAccept')}
           </button>
         </div>
         <div className={styles.text}>
-          Service fee <span className={styles.percent}>1.5%</span>{" "}
+          {t('screens.item.control.serviceFee')} <span className={styles.percent}>1.5%</span>{" "}
           <span>2.563 MTT</span> <span>$4,540.62</span>
         </div>
         <div className={styles.foot}>
@@ -66,11 +68,11 @@ const Control = ({ className }) => {
             className={cn("button", styles.button)}
             onClick={() => setVisibleModalSale(true)}
           >
-            Put on sale
+            {t('screens.item.control.buttonPutOnSale')}
           </button>
         </div>
         <div className={styles.note}>
-          You can sell this token on "Meta Talent Market" Marketplace
+          {t('screens.item.control.note')}
         </div>
       </div>
       <Modal

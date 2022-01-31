@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Item.module.sass";
 import Users from "./Users";
 import Control from "./Control";
 import Options from "./Options";
-
-const navLinks = ["Info", "Owners", "History", "Bids"];
 
 const categories = [
   {
@@ -33,7 +32,14 @@ const users = [
 ];
 
 const Item = () => {
+  const { t, i18n } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
+  const navLinks = [
+    t('screens.item.navLinks.info'),
+    t('screens.item.navLinks.owners'),
+    t('screens.item.navLinks.history'),
+    t('screens.item.navLinks.bids'),
+  ];
 
   return (
     <>
@@ -64,7 +70,7 @@ const Item = () => {
             <Options className={styles.options} />
           </div>
           <div className={styles.details}>
-            <h1 className={cn("h3", styles.title)}>The amazing art</h1>
+            <h1 className={cn("h3", styles.title)}>{t('screens.item.title')}</h1>
             <div className={styles.cost}>
               <div className={cn("status-stroke-green", styles.price)}>
                 2.5 MTT
@@ -72,11 +78,10 @@ const Item = () => {
               <div className={cn("status-stroke-black", styles.price)}>
                 $4,429.87
               </div>
-              <div className={styles.counter}>10 in stock</div>
+              <div className={styles.counter}>10 {t('screens.item.inStock')}</div>
             </div>
             <div className={styles.info}>
-              This NFT Card will give you Access to Special Airdrops. To learn
-              more about MTM please visit{" "}
+              {t('screens.item.info')}{" "}
               <a
                 href="https://mtm-nft.netlify.app"
                 target="_blank"

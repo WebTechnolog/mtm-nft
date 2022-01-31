@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./User.module.sass";
 import Icon from "../../../components/Icon";
 import Report from "../../../components/Report";
@@ -11,6 +12,7 @@ const shareUrlFacebook = "https://mtm-nft.netlify.app";
 const shareUrlTwitter = "https://mtm-nft.netlify.app";
 
 const User = ({ className, item }) => {
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [visibleShare, setVisibleShare] = useState(false);
   const [visibleModalReport, setVisibleModalReport] = useState(false);
@@ -51,8 +53,8 @@ const User = ({ className, item }) => {
               )}
               onClick={() => setVisible(!visible)}
             >
-              <span>Follow</span>
-              <span>Unfollow</span>
+              <span>{t('screens.profile.user.follow')}</span>
+              <span>{t('screens.profile.user.unfollow')}</span>
             </button>
             <button
               className={cn(
@@ -72,7 +74,7 @@ const User = ({ className, item }) => {
             </button>
           </div>
           <div className={cn(styles.box, { [styles.active]: visibleShare })}>
-            <div className={styles.stage}>Share link to this page</div>
+            <div className={styles.stage}>{t('screens.profile.user.shareLink')}</div>
             <div className={styles.share}>
               <TwitterShareButton
                 className={styles.direction}
@@ -106,7 +108,7 @@ const User = ({ className, item }) => {
             </a>
           ))}
         </div>
-        <div className={styles.note}>Member since Mar 15, 2021</div>
+        <div className={styles.note}>{t('screens.profile.user.memberSince')} Mar 15, 2021</div>
       </div>
       <Modal
         visible={visibleModalReport}

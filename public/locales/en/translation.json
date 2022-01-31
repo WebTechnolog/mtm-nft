@@ -61,7 +61,7 @@
       "user": {
         "avatar": "Avatar",
         "balance": "Balance",
-        "manageFun": "Manage fun on Coinbase"
+        "manageFun": "Coinbase Management"
       }
     },
     "hotBid": {
@@ -182,6 +182,220 @@
         "latestUpload": "Latest upload from creators",
         "discoverMore": "Discover more"
       }
+    },
+    "imageCreationHome": {
+      "sections": {
+        "createStyleTransfer": {
+          "title": "Style Transfer",
+          "subtitle": "Turn your photo into a masterpiece"
+        },
+        "createTextToImage": {
+          "title": "Text to Image",
+          "subtitle": "Create art from nothing but a text prompt"
+        }
+      },
+      "title": "Vincent AI<br />the power of imagination",
+      "subtitle": "Choose a creation method"
+    },
+    "imageCreationStyleTransfer": {
+      "title": "Create Something Amazing",
+      "showAdvancedOptions": "Show advanced options",
+      "items": {
+        "inputImage": {
+          "title": "Input Image",
+          "note": "Choose an image to apply styles to",
+          "multiple": "Try multiple inputs"
+        },
+        "styleImage": {
+          "title": "Style Image",
+          "note": "Choose a style to apply to your input",
+          "multiple": "Try multiple inputs"
+        },
+        "blendWithAnotherStyle": {
+          "title": "Blend With Another Style?",
+          "note": "Optional. Useful for mixing styles, or using masks to apply different styles to different parts of the image. Styles you add this way will be used together in the same creation.",
+          "button": "Add style"
+        },
+        "creationSettings": {
+          "title": "Creation Settings",
+          "note": "These options affect the creation as a whole.",
+          "options": {
+            "color": {
+              "title": "Color",
+              "note": "Use colors from input image"
+            },
+            "sharpen": {
+              "title": "Sharpen",
+              "note": "Reduce bluriness by running the algorithm for longer"
+            },
+            "contentWeight": {
+              "title": "Content Weight",
+              "note": "How much should the output look like the input image?"
+            }
+          }
+        },
+        "video": {
+          "title": "Video",
+          "note": "Get a short video of the creation process",
+          "switch": "Get a 10-20 second video of your creation being generated for 2 extra credits"
+        },
+        "resolution": {
+          "title": "Resolution",
+          "note": "Choose an output size - higher resolution gives better results"
+        },
+        "submit": {
+          "button": "Create (1 Credit)",
+          "terms": {
+            "text1": "Note: by using this image creator, you agree to abide by our",
+            "text2": "terms of service"
+          }
+        }
+      }
+    },
+    "imagesCreationTextToImage": {
+      "title": "Create Something Amazing",
+      "showAdvancedOptions": "Show advanced options",
+      "items": {
+        "textPrompt": {
+          "title": "Text Prompt",
+          "note": "Write a prompt for the AI to work from",
+          "label": "Your text prompt",
+          "placeholder": "e. g. Crazy fox jumps over a lazy dog"
+        },
+        "advanced": {
+          "title": "Advanced",
+          "note": "Optional settings you might want to tweak",
+          "startImage": "Start Image"
+        },
+        "width": {
+          "title": "Width",
+          "placeholder": "e. g. 512"
+        },
+        "height": {
+          "title": "Height",
+          "placeholder": "e. g. 512"
+        },
+        "imageMaxSize": {
+          "title": "Image Max Size",
+          "placeholder": "e. g. 600"
+        },
+        "upscale": {
+          "title": "Upscale",
+          "options": {
+            "default": "default",
+            "art": "art",
+            "comics": "comics",
+            "anime": "anime"
+          }
+        }
+      },
+      "serverBusyMessage": "Server is currently busy. Please try creation a little later.",
+      "submit": {
+        "button": "Create",
+        "terms": {
+          "text1": "Note: by using this image creator, you agree to abide by our",
+          "text2": "terms of service"
+        }
+      },
+      "result": {
+        "title": "Your Amazing Masterpiece",
+        "inProgress": "In progress",
+        "finishing": "Finishing...",
+        "failed": "Oops, something went wrong.<br/>Please try creating another image.",
+        "resultingImage": "Resulting Image",
+        "createAnotherOne": "Create another one"
+      }
+    },
+    "item": {
+      "control": {
+        "accept": {
+          "items": {
+            "serviceFee": "Service fee",
+            "totalBidAmount": "Total bid amount"
+          },
+          "text": "You are about to accept a bid for",
+          "from": "from",
+          "stage": "for 1 edition",
+          "buttonOk": "Accept bid",
+          "buttonCancel": "Cancel"
+        },
+        "checkout": {
+          "items": {
+            "yourBalance": "Your balance",
+            "serviceFee": "Service fee",
+            "youWillPay": "You will pay"
+          },
+          "title": "Checkout",
+          "text": "You are about to purchase",
+          "from": "from",
+          "notVerified": "This creator is not verified",
+          "purchaseAtOwnRisk": "Purchase this item at your own risk",
+          "followSteps": "Follow steps",
+          "purchasing": "Purchasing",
+          "sendingTransaction": "Sending transaction with your wallet",
+          "buttonOk": "I understand, continue",
+          "buttonCancel": "Cancel"
+        },
+        "putSale": {
+          "items": {
+            "enterYourPrice": "Enter your price",
+            "serviceFee": "Service fee",
+            "totalBidAmount": "Total bid amount"
+          },
+          "title": "Put on sale",
+          "info": "Instant sale price",
+          "text": "Enter the price for which the item will be instanly sold",
+          "buttonOk": "Continue",
+          "buttonCancel": "Cancel"
+        },
+        "successfullyPurchased": {
+          "title": "Yay!",
+          "info": "You successfully purchased",
+          "from": "from",
+          "status": "Status",
+          "transactionID": "Transaction ID",
+          "processing": "Processing",
+          "timeToShowOff": "Time to show-off"
+        },
+        "info": "Highest bid by",
+        "buttonPurchase": "Purchase now",
+        "buttonPlaceABid": "Place a bid",
+        "buttonViewAll": "View all",
+        "buttonAccept": "Accept",
+        "serviceFee": "Service fee",
+        "buttonPutOnSale": "Put on sale",
+        "note": "You can sell this token on 'Meta Talent Market' Marketplace"
+      },
+      "navLinks": {
+        "info": "Info",
+        "owners": "Owners",
+        "history": "History",
+        "bids": "Bids"
+      },
+      "title": "The amazing art",
+      "inStock": "in stock",
+      "info": "This NFT Card will give you Access to Special Airdrops. To learn more about MTM please visit"
+    },
+    "profile": {
+      "user": {
+        "follow": "Follow",
+        "unfollow": "Unfollow",
+        "shareLink": "Share link to this page",
+        "memberSince": "Member since"
+      },
+      "navLinks": {
+        "onSale": "On Sale",
+        "collectibles": "Collectibles",
+        "created": "Created",
+        "likes": "Likes",
+        "following": "Following",
+        "followers": "Followers"
+      },
+      "editCoverPhoto": "Edit cover photo",
+      "editProfile": "Edit profile",
+      "dragAndDropPhoto": "Drag and drop your photo here",
+      "clickToBrowse": "or click to browse",
+      "savePhoto": "Save photo"
     }
   }
 }

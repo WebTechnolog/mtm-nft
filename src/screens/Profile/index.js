@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import styles from "./Profile.module.sass";
 import Icon from "../../components/Icon";
@@ -10,15 +11,6 @@ import Followers from "./Followers";
 // data
 import { bids } from "../../mocks/bids";
 import { isStepDivisible } from "react-range/lib/utils";
-
-const navLinks = [
-  "On Sale",
-  "Collectibles",
-  "Created",
-  "Likes",
-  "Following",
-  "Followers",
-];
 
 const socials = [
   {
@@ -182,8 +174,17 @@ const followers = [
 ];
 
 const Profile = () => {
+  const { t, i18n } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [visible, setVisible] = useState(false);
+  const navLinks = [
+    t('screens.profile.navLinks.onSale'),
+    t('screens.profile.navLinks.collectibles'),
+    t('screens.profile.navLinks.created'),
+    t('screens.profile.navLinks.likes'),
+    t('screens.profile.navLinks.following'),
+    t('screens.profile.navLinks.followers'),
+  ];
 
   return (
     <div className={styles.profile}>
@@ -199,14 +200,14 @@ const Profile = () => {
               className={cn("button-stroke button-small", styles.button)}
               onClick={() => setVisible(true)}
             >
-              <span>Edit cover photo</span>
+              <span>{t('screens.profile.editCoverPhoto')}</span>
               <Icon name="edit" size="16" />
             </button>
             <Link
               className={cn("button-stroke button-small", styles.button)}
               to="profile-edit"
             >
-              <span>Edit profile</span>
+              <span>{t('screens.profile.editProfile')}</span>
               <Icon name="image" size="16" />
             </Link>
           </div>
@@ -214,14 +215,14 @@ const Profile = () => {
             <input type="file" />
             <div className={styles.wrap}>
               <Icon name="upload-file" size="48" />
-              <div className={styles.info}>Drag and drop your photo here</div>
-              <div className={styles.text}>or click to browse</div>
+              <div className={styles.info}>{t('screens.profile.dragAndDropPhoto')}</div>
+              <div className={styles.text}>{t('screens.profile.clickToBrowse')}</div>
             </div>
             <button
               className={cn("button-small", styles.button)}
               onClick={() => setVisible(false)}
             >
-              Save photo
+              {t('screens.profile.savePhoto')}
             </button>
           </div>
         </div>

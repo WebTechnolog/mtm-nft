@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import cn from "classnames";
+import { useTranslation, Trans } from 'react-i18next';
 import styles from "./ImagesCreationTextToImage.module.sass";
 import Switch from "../../components/Switch";
 import Icon from "../../components/Icon";
@@ -9,6 +10,7 @@ import Loader from "../../components/Loader";
 const apiUrl = 'https://api2.mtm.art';
 
 const ImagesCreationTextToImage = () => {
+  const { t, i18n } = useTranslation();
   const [isAdvancedEnabled, setIsAdvancedEnabled] = useState(false);
   const [formValues, setFormValues] = useState({
     prompts: '',
@@ -146,26 +148,28 @@ const ImagesCreationTextToImage = () => {
             <>
               <div className={styles.top}>
                 <h1 className={cn("h2", styles.heading)}>
-                  Create Something Amazing
+                  {t('screens.imagesCreationTextToImage.title')}
                 </h1>
                 <div className={styles.switchControl}>
                   <Switch value={isAdvancedEnabled} setValue={setIsAdvancedEnabled} />
-                  <span>Show advanced options</span>
+                  <span>{t('screens.imagesCreationTextToImage.showAdvancedOptions')}</span>
                 </div>
               </div>
 
               <form className={styles.list} onSubmit={handleFormSubmit}>
                 <div className={styles.item}>
-                  <div className={styles.category}>Text Prompt</div>
+                  <div className={styles.category}>
+                    {t('screens.imagesCreationTextToImage.items.textPrompt.title')}
+                  </div>
                   <p className={styles.note}>
-                    Write a prompt for the AI to work from
+                    {t('screens.imagesCreationTextToImage.items.textPrompt.note')}
                   </p>
                   <TextInput
                     className={styles.field}
-                    label="Your text prompt"
+                    label={t('screens.imagesCreationTextToImage.items.textPrompt.label')}
                     name="prompts"
                     type="text"
-                    placeholder="e. g. Crazy fox jumps over a lazy dog"
+                    placeholder={t('screens.imagesCreationTextToImage.items.textPrompt.placeholder')}
                     required
                     value={formValues.prompts}
                     onChange={handleInputChange}
@@ -175,12 +179,14 @@ const ImagesCreationTextToImage = () => {
                 {isAdvancedEnabled && (
                   <>
                     <div className={styles.item}>
-                      <div className={styles.category}>Advanced</div>
+                      <div className={styles.category}>
+                        {t('screens.imagesCreationTextToImage.items.advanced.title')}
+                      </div>
                       <p className={styles.note}>
-                        Optional settings you might want to tweak
+                        {t('screens.imagesCreationTextToImage.items.advanced.note')}
                       </p>
 
-                      <div><strong>Start Image</strong></div>
+                      <div><strong>{t('screens.imagesCreationTextToImage.items.advanced.startImage')}</strong></div>
                       <div className={styles.file} style={{backgroundImage: `url(data:image/png;base64,${formValues.init_image})`}}>
                         <input
                           className={styles.load}
@@ -200,24 +206,28 @@ const ImagesCreationTextToImage = () => {
                     <div className={styles.item}>
                       <div className={styles.optionsList}>
                         <div className={styles.optionsItem}>
-                          <div className={styles.category}>Width</div>
+                          <div className={styles.category}>
+                            {t('screens.imagesCreationTextToImage.items.width.title')}
+                          </div>
                           <TextInput
                             className={styles.field}
                             name="width"
                             type="number"
-                            placeholder="e. g. 512"
+                            placeholder={t('screens.imagesCreationTextToImage.items.width.placeholder')}
                             value={formValues.width}
                             onChange={handleInputChange}
                           />
                         </div>
 
                         <div className={styles.optionsItem}>
-                          <div className={styles.category}>Height</div>
+                          <div className={styles.category}>
+                            {t('screens.imagesCreationTextToImage.items.height.title')}
+                          </div>
                           <TextInput
                             className={styles.field}
                             name="height"
                             type="number"
-                            placeholder="e. g. 512"
+                            placeholder={t('screens.imagesCreationTextToImage.items.height.placeholder')}
                             value={formValues.height}
                             onChange={handleInputChange}
                           />
@@ -228,12 +238,14 @@ const ImagesCreationTextToImage = () => {
                     <div className={styles.item}>
                       <div className={styles.optionsList} style={{alignItems: 'end'}}>
                         <div className={styles.optionsItem}>
-                          <div className={styles.category}>Image Max Size</div>
+                          <div className={styles.category}>
+                            {t('screens.imagesCreationTextToImage.items.imageMaxSize.title')}
+                          </div>
                           <TextInput
                             className={styles.field}
                             name="im_max_size"
                             type="number"
-                            placeholder="e. g. 600"
+                            placeholder={t('screens.imagesCreationTextToImage.items.imageMaxSize.placeholder')}
                             value={formValues.im_max_size}
                             onChange={handleInputChange}
                           />
@@ -246,15 +258,15 @@ const ImagesCreationTextToImage = () => {
                               value={formValues.upscale}
                               onChange={handleInputChange}
                             />
-                            <span>Upscale</span>
+                            <span>{t('screens.imagesCreationTextToImage.items.upscale.title')}</span>
                           </div>
 
                           {formValues.upscale && (
                             <select name="upscale_type" value={formValues.upscale_type} onChange={handleInputChange} className={styles.formControlSelect}>
-                              <option value="default">default</option>
-                              <option value="art">art</option>
-                              <option value="comics">comics</option>
-                              <option value="anime">anime</option>
+                              <option value="default">{t('screens.imagesCreationTextToImage.items.upscale.options.default')}</option>
+                              <option value="art">{t('screens.imagesCreationTextToImage.items.upscale.options.art')}</option>
+                              <option value="comics">{t('screens.imagesCreationTextToImage.items.upscale.options.comics')}</option>
+                              <option value="anime">{t('screens.imagesCreationTextToImage.items.upscale.options.anime')}</option>
                             </select>
                           )}
                         </div>
@@ -266,17 +278,17 @@ const ImagesCreationTextToImage = () => {
                 <div className={styles.item}>
                   {apiRunResponse.status === 503 && (
                     <p style={{textAlign: 'center'}}>
-                      <strong>Server is currently busy. Please try creation a little later.</strong>
+                      <strong>{t('screens.imagesCreationTextToImage.serverBusyMessage')}</strong>
                     </p>
                   )}
 
                   <p>
                     <button type="submit" className={cn(`button ${formSubmitted ? 'loading' : ''}`, styles.buttonBig)}>
                       {formSubmitted && <Loader className={styles.loader} color="white" />}
-                      Create
+                      {t('screens.imagesCreationTextToImage.submit.button')}
                     </button>
                   </p>
-                  <p>Note: by using this image creator, you agree to abide by our <a href="#">terms of service</a></p>
+                  <p>{t('screens.imagesCreationTextToImage.submit.terms.text1')} <a href="#">{t('screens.imagesCreationTextToImage.submit.terms.text2')}</a></p>
                 </div>
               </form>
             </>
@@ -286,25 +298,24 @@ const ImagesCreationTextToImage = () => {
             <>
               <div className={styles.top}>
                 <h1 className={cn("h2", styles.heading)}>
-                  Your Amazing Masterpiece
+                  {t('screens.imagesCreationTextToImage.result.title')}
                 </h1>
 
                 {apiStatusResponse.status === 'process' && (
                   <div className={cn("h3", styles.heading)}>
-                    In progress - {apiStatusResponse.img}
+                    {t('screens.imagesCreationTextToImage.result.inProgress')} - {apiStatusResponse.img}
                   </div>
                 )}
 
                 {(apiStatusResponse.status !== 'process' && apiStatusResponse.status !== 'ready' && apiStatusResponse.status !== 'upscale failed') && (
                   <div className={cn("h3", styles.heading)}>
-                    Finishing...
+                    {t('screens.imagesCreationTextToImage.result.finishing')}
                   </div>
                 )}
 
                 {apiStatusResponse.status === 'upscale failed' && (
                   <div className={cn("h3", styles.heading)}>
-                    Oops, something went wrong.<br/>
-                    Please try creating another image.
+                    <Trans i18nKey="screens.imagesCreationTextToImage.result.failed" />
                   </div>
                 )}
               </div>
@@ -312,7 +323,7 @@ const ImagesCreationTextToImage = () => {
               {apiStatusResponse.status === 'ready' && (
                 <>
                   <p className={styles.imageResult}>
-                    <img src={`data:image/png;base64,${apiStatusResponse.img}`} alt="Resulting Image" />
+                    <img src={`data:image/png;base64,${apiStatusResponse.img}`} alt={t('screens.imagesCreationTextToImage.result.resultingImage')} />
                   </p>
 
                   <p>&nbsp;</p>
@@ -323,7 +334,7 @@ const ImagesCreationTextToImage = () => {
                 <>
                   <p>
                     <button type="button" className={cn('button', styles.buttonBig)} onClick={handleNewImageClick}>
-                      Create another one
+                      {t('screens.imagesCreationTextToImage.result.createAnotherOne')}
                     </button>
                   </p>
                 </>

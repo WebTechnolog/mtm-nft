@@ -35,15 +35,6 @@ const nav = [
   },
 ];
 
-const locales = {
-  en: {
-    nativeName: 'Eng'
-  },
-  ru: {
-    nativeName: 'Рус'
-  }
-};
-
 const Headers = () => {
   const { t, i18n } = useTranslation();
   const [visibleNav, setVisibleNav] = useState(false);
@@ -65,14 +56,6 @@ const Headers = () => {
           />
           <span>Meta<br/> Talent<br/> Marketplace</span>
         </Link>
-
-        <select className={styles.languageSelector} onChange={(element) => i18n.changeLanguage(element.target.value)}>
-          {Object.keys(locales).map((locale) => (
-            <option key={locale} value={locale}>
-              {locales[locale].nativeName}
-            </option>
-          ))}
-        </select>
 
         <div className={cn(styles.wrapper, { [styles.active]: visibleNav })}>
           <nav className={styles.nav}>
