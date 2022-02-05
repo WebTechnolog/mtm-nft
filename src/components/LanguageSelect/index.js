@@ -20,7 +20,7 @@ const LanguageSelect = ({ className }) => {
   return (
     <div className={cn(className, styles.languageSelector)}>
       <div className={styles.label}>
-        {locales[i18n.language].label}
+        {locales[i18n.language]?.label || locales.en.label}
       </div>
 
       <select onChange={(element) => i18n.changeLanguage(element.target.value)}

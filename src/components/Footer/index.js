@@ -69,6 +69,7 @@ const Footers = () => {
               <div className={styles.details}>{t('components.footer.theme')}</div>
               <Theme className="theme-big" />
             </div>
+            <LanguageSelect className={styles.languageSelect}></LanguageSelect>
           </div>
           <div className={styles.col}>
             {items.map((x, index) => (
