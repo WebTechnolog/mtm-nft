@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Search02.module.sass";
 import Image from "../../components/Image";
 import Form from "../../components/Form";
@@ -28,6 +29,7 @@ const items = [
 ];
 
 const Search = () => {
+  const { t, i18n } = useTranslation();
   const [search, setSearch] = useState("");
 
   const handleSubmit = (e) => {
@@ -48,20 +50,22 @@ const Search = () => {
         </div>
         <div className={styles.wrap}>
           <h2 className={cn("h2", styles.title)}>
-            Sorry, we couldn’t find any results for this search.
+            {t('screens.search02.title')}
           </h2>
-          <div className={styles.info}>Maybe give one of these a try?</div>
+          <div className={styles.info}>{t('screens.search02.subtitle')}</div>
           <Form
             className={styles.form}
             value={search}
             setValue={setSearch}
             onSubmit={() => handleSubmit()}
-            placeholder="Enter your search..."
+            placeholder={t('screens.search02.searchInput.placeholder')}
             type="text"
             name="search"
           />
         </div>
-        <div className={styles.subtitle}>Explore more</div>
+        <div className={styles.subtitle}>
+          {t('screens.search02.exploreMore')}
+        </div>
         <div className={styles.list}>
           {items.map((x, index) => (
             <div className={styles.item} key={index}>

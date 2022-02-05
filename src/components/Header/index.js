@@ -8,37 +8,37 @@ import Image from "../Image";
 import Notification from "./Notification";
 import User from "./User";
 
-const nav = [
-  {
-    url: "/create-image",
-    title: "Vincent AI",
-  },
-  {
-    url: "/antiques",
-    title: "Antiques",
-  },
-  {
-    url: "/search01",
-    title: "Discover",
-  },
-  {
-    url: "/faq",
-    title: "How it work",
-  },
-  {
-    url: "/item",
-    title: "Create item",
-  },
-  {
-    url: "/profile",
-    title: "Profile",
-  },
-];
-
 const Headers = () => {
   const { t, i18n } = useTranslation();
   const [visibleNav, setVisibleNav] = useState(false);
   const [search, setSearch] = useState("");
+
+  const nav = [
+    {
+      url: "/create-image",
+      title: t('components.header.nav.createImage'),
+    },
+    {
+      url: "/antiques",
+      title: t('components.header.nav.antiques'),
+    },
+    {
+      url: "/search01",
+      title: t('components.header.nav.search01'),
+    },
+    {
+      url: "/faq",
+      title: t('components.header.nav.faq'),
+    },
+    {
+      url: "/item",
+      title: t('components.header.nav.item'),
+    },
+    {
+      url: "/profile",
+      title: t('components.header.nav.profile'),
+    },
+  ];
 
   const handleSubmit = (e) => {
     alert();
@@ -47,7 +47,7 @@ const Headers = () => {
   return (
     <header className={styles.header}>
       <div className={cn("container", styles.container)}>
-        <Link className={styles.logo} to="/">
+        <Link className={styles.logo} to="/home">
           <Image
             className={styles.pic}
             src="/images/logo.svg"

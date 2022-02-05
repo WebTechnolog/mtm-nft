@@ -10,15 +10,38 @@ import Dropdown from "../../components/Dropdown";
 // data
 import { bids } from "../../mocks/bids";
 
-const navLinks = ["All items", "Art", "Game", "Photography", "Music", "Video"];
-
-const dateOptions = ["Newest", "Oldest"];
-const likesOptions = ["Most liked", "Least liked"];
-const colorOptions = ["All colors", "Black", "Green", "Pink", "Purple"];
-const creatorOptions = ["Verified only", "All", "Most liked"];
-
 const Search = () => {
   const { t, i18n } = useTranslation();
+
+  const navLinks = [
+    t('screens.search01.navLinks.allItems'),
+    t('screens.search01.navLinks.art'),
+    t('screens.search01.navLinks.game'),
+    t('screens.search01.navLinks.photography'),
+    t('screens.search01.navLinks.music'),
+    t('screens.search01.navLinks.video'),
+  ];
+  const dateOptions = [
+    t('screens.search01.dateOptions.newest'),
+    t('screens.search01.dateOptions.oldest'),
+  ];
+  const likesOptions = [
+    t('screens.search01.likesOptions.mostLiked'),
+    t('screens.search01.likesOptions.leastLiked'),
+  ];
+  const colorOptions = [
+    t('screens.search01.colorOptions.allColors'),
+    t('screens.search01.colorOptions.black'),
+    t('screens.search01.colorOptions.green'),
+    t('screens.search01.colorOptions.pink'),
+    t('screens.search01.colorOptions.purple'),
+  ];
+  const creatorOptions = [
+    t('screens.search01.creatorOptions.verifiedOnly'),
+    t('screens.search01.creatorOptions.all'),
+    t('screens.search01.creatorOptions.mostLiked'),
+  ];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [date, setDate] = useState(dateOptions[0]);
   const [likes, setLikes] = useState(likesOptions[0]);
@@ -41,7 +64,9 @@ const Search = () => {
     <div className={cn("section-pt80", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.top}>
-          <div className={styles.title}>Type your keywords</div>
+          <div className={styles.title}>
+            {t('screens.search01.title')}
+          </div>
           <form
             className={styles.search}
             action=""
@@ -87,7 +112,7 @@ const Search = () => {
         <div className={styles.row}>
           <div className={styles.filters}>
             <div className={styles.range}>
-              <div className={styles.label}>Price range</div>
+              <div className={styles.label}>{t('screens.search01.filters.priceRange')}</div>
               <Range
                 values={values}
                 step={STEP}
@@ -165,7 +190,7 @@ const Search = () => {
             </div>
             <div className={styles.group}>
               <div className={styles.item}>
-                <div className={styles.label}>Price</div>
+                <div className={styles.label}>{t('screens.search01.filters.price')}</div>
                 <Dropdown
                   className={styles.dropdown}
                   value={likes}
@@ -174,7 +199,7 @@ const Search = () => {
                 />
               </div>
               <div className={styles.item}>
-                <div className={styles.label}>Color</div>
+                <div className={styles.label}>{t('screens.search01.filters.color')}</div>
                 <Dropdown
                   className={styles.dropdown}
                   value={color}
@@ -183,7 +208,7 @@ const Search = () => {
                 />
               </div>
               <div className={styles.item}>
-                <div className={styles.label}>Creator</div>
+                <div className={styles.label}>{t('screens.search01.filters.creator')}</div>
                 <Dropdown
                   className={styles.dropdown}
                   value={creator}
@@ -194,7 +219,7 @@ const Search = () => {
             </div>
             <div className={styles.reset}>
               <Icon name="close-circle-fill" size="24" />
-              <span>Reset filter</span>
+              <span>{t('screens.search01.resetFilter')}</span>
             </div>
           </div>
           <div className={styles.wrapper}>
@@ -205,7 +230,7 @@ const Search = () => {
             </div>
             <div className={styles.btns}>
               <button className={cn("button-stroke", styles.button)}>
-                <span>Load more</span>
+                <span>{t('screens.search01.loadMore')}</span>
               </button>
             </div>
           </div>

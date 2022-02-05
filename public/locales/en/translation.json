@@ -54,6 +54,14 @@
       }
     },
     "header": {
+      "nav": {
+        "createImage": "Vincent AI",
+        "antiques": "Antiques",
+        "search01": "Discover",
+        "faq": "How it works",
+        "item": "Create item",
+        "profile": "Profile"
+      },
       "notification": {
         "title": "Notification",
         "seeAll": "See All"
@@ -396,6 +404,226 @@
       "dragAndDropPhoto": "Drag and drop your photo here",
       "clickToBrowse": "or click to browse",
       "savePhoto": "Save photo"
+    },
+    "profileEdit": {
+      "breadcrumbs": {
+        "home": "Home",
+        "editProfile": "Edit Profile"
+      },
+      "title": "Edit profile",
+      "info": {
+        "text1": "You can set preferred display name, create",
+        "text2": "your profile URL",
+        "text3": "and manage other personal settings."
+      },
+      "profilePhoto": {
+        "title": "Profile photo",
+        "text": "We recommend an image of at least 400x400. Gifs work too",
+        "buttonUpload": "Upload"
+      },
+      "accountInfo": {
+        "title": "Account info",
+        "inputs": {
+          "name": {
+            "label": "display name",
+            "placeholder": "Enter your display name"
+          },
+          "url": {
+            "label": "Custom url",
+            "placeholder": "mtm-nft.netlify.app"
+          },
+          "bio": {
+            "label": "Bio",
+            "placeholder": "About yourselt in a few words"
+          }
+        }
+      },
+      "social": {
+        "title": "Social",
+        "inputs": {
+          "portfolio": {
+            "label": "portfolio or website",
+            "placeholder": "Enter URL"
+          },
+          "twitter": {
+            "label": "twitter",
+            "placeholder": "@twitter username"
+          }
+        },
+        "buttonVerify": "Verify account",
+        "addMore": "Add more social account"
+      },
+      "note": "To update your settings you should sign message through your wallet. Click 'Update profile' then sign the message",
+      "buttonOk": "Update Profile",
+      "buttonCancel": "Clear all"
+    },
+    "search01": {
+      "navLinks": {
+        "allItems": "All items",
+        "art": "Art",
+        "game": "Game",
+        "photography": "Photography",
+        "music": "Music",
+        "video": "Video"
+      },
+      "dateOptions": {
+        "newest": "Newest",
+        "oldest": "Oldest"
+      },
+      "likesOptions": {
+        "mostLiked": "Most liked",
+        "leastLiked": "Least liked"
+      },
+      "colorOptions": {
+        "allColors": "All colors",
+        "black": "Black",
+        "green": "Green",
+        "pink": "Pink",
+        "purple": "Purple"
+      },
+      "creatorOptions": {
+        "verifiedOnly": "Verified only",
+        "all": "All",
+        "mostLiked": "Most liked"
+      },
+      "title": "Type your keywords",
+      "filters": {
+        "priceRange": "Price range",
+        "price": "Price",
+        "color": "Color",
+        "creator": "Creator"
+      },
+      "resetFilter": "Reset filter",
+      "loadMore": "Load more"
+    },
+    "search02": {
+      "title": "Sorry, we couldn’t find any results for this search.",
+      "subtitle": "Maybe give one of these a try?",
+      "searchInput": {
+        "placeholder": "Enter your search..."
+      },
+      "exploreMore": "Explore more"
+    },
+    "uploadDetails": {
+      "folowSteps": {
+        "title": "Follow steps",
+        "items": {
+          "item1": {
+            "details": {
+              "info": "Upload files & Mint token",
+              "text": "Call contract method"
+            },
+            "button": "Done"
+          },
+          "item2": {
+            "details": {
+              "info": "Sign sell order",
+              "text": "Sign sell order using your wallet"
+            },
+            "button": "Start now"
+          },
+          "item3": {
+            "details": {
+              "info": "Sign sell order",
+              "text": "Sign sell order using your wallet"
+            }
+          },
+          "item4": {
+            "details": {
+              "info": "Sign sell order",
+              "text": "Sign sell order using your wallet"
+            },
+            "button": "Failed"
+          },
+          "item5": {
+            "details": {
+              "info": "Sign lock order",
+              "text": "Sign lock order using your wallet"
+            },
+            "button": "Start now"
+          }
+        },
+        "errorNote": {
+          "text1": "Something went wrong, please",
+          "text2": "try again"
+        }
+      },
+      "preview": {
+        "title": "Preview",
+        "inStock": "in stock",
+        "highestBid": "Highest bid",
+        "newBid": "New bid",
+        "buttonClear": "Clear all"
+      },
+      "title": "Create single collectible",
+      "buttonMultiple": "Switch to Multiple",
+      "items": {
+        "item1": {
+          "title": "Upload file",
+          "note": "Drag or choose your file to upload",
+          "format": "PNG, GIF, WEBP, MP4 or MP3. Max 1Gb."
+        },
+        "item2": {
+          "title": "Item Details",
+          "inputs": {
+            "item": {
+              "label": "Item name",
+              "placeholder": "e. g. Redeemable Bitcoin Card with logo"
+            },
+            "description": {
+              "label": "Description",
+              "placeholder": "e. g. “After purchasing you will able to recived the logo...”"
+            },
+            "royalties": {
+              "label": "Royalties"
+            },
+            "size": {
+              "label": "Size",
+              "placeholder": "e. g. Size"
+            },
+            "property": {
+              "label": "Property",
+              "placeholder": "e. g. Property"
+            }
+          }
+        }
+      },
+      "options": {
+        "option1": {
+          "title": "Put on sale",
+          "text": "You’ll receive bids on this item"
+        },
+        "option2": {
+          "title": "Instant sale price",
+          "text": "Enter the price for which the item will be instantly sold"
+        },
+        "option3": {
+          "title": "Unlock once purchased",
+          "text": "Content will be unlocked after successful transaction"
+        },
+        "option4": {
+          "title": "Choose collection",
+          "text": "Choose an exiting collection or create a new one"
+        }
+      },
+      "footer": {
+        "buttonPreview": "Preview",
+        "buttonCreateItem": "Create item",
+        "autoSaving": "Auto saving"
+      }
+    },
+    "uploadVariants": {
+      "breadcrumbs": {
+        "home": "Home",
+        "uploadItem": "Upload Item"
+      },
+      "items": {
+        "createSingle": "Create Single",
+        "createMultiple": "Create Multiple"
+      },
+      "title": "Upload item",
+      "info": "Choose “Single” if you want your collectible to be one of a kind or “Multiple” if you want to sell one collectible multiple times",
+      "note": "We do not own your private keys and cannot access your funds without your confirmation."
     }
   }
 }

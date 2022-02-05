@@ -1,16 +1,19 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from 'react-i18next';
 import styles from "./Preview.module.sass";
 import Icon from "../../../components/Icon";
 
 const Preview = ({ className, onClose }) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className={cn(className, styles.wrap)}>
       <div className={styles.inner}>
         <button className={styles.close} onClick={onClose}>
           <Icon name="close" size="14" />
         </button>
-        <div className={styles.info}>Preview</div>
+        <div className={styles.info}>{t('screens.uploadDetails.preview.title')}</div>
         <div className={styles.card}>
           <div className={styles.preview}>
             <img
@@ -37,16 +40,16 @@ const Preview = ({ className, onClose }) => {
                     <img src="/images/content/avatar-4.jpg" alt="Avatar" />
                   </div>
                 </div>
-                <div className={styles.counter}>3 in stock</div>
+                <div className={styles.counter}>3 {t('screens.uploadDetails.preview.inStock')}</div>
               </div>
             </div>
             <div className={styles.foot}>
               <div className={styles.status}>
                 <Icon name="candlesticks-up" size="20" />
-                Highest bid <span>0.001 MTT</span>
+                {t('screens.uploadDetails.preview.highestBid')} <span>0.001 MTT</span>
               </div>
               <div className={styles.bid}>
-                New bid
+                {t('screens.uploadDetails.preview.newBid')}
                 <span role="img" aria-label="fire">
                   🔥
                 </span>
@@ -56,7 +59,7 @@ const Preview = ({ className, onClose }) => {
         </div>
         <button className={styles.clear}>
           <Icon name="circle-close" size="24" />
-          Clear all
+          {t('screens.uploadDetails.preview.buttonClear')}
         </button>
       </div>
     </div>
